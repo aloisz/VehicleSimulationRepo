@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\build\CMakeFiles\2080ef9286fabf0507e2eeb8a99f34ae\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{517C39D0-FAE7-34D4-BDF5-71F0775FC3DD}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

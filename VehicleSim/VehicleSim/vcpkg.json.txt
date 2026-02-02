@@ -1,0 +1,9 @@
+{
+  "name": "vehiclesim",
+  "version": "0.1.0",
+  "dependencies": [
+    "bullet3",
+    "freeglut",
+    "glm"
+  ]
+}
