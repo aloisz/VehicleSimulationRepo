@@ -12,7 +12,20 @@ find_package(GLUT REQUIRED)
 # Add executable
 add_executable(VehicleSim
     src/main.cpp
+    src/Physics.h
     src/Physics.cpp
+
+src/Vehicle.h
+src/Vehicle.cpp
+
+src/GameObject.h
+src/GameObject.cpp
+
+src/Ground.h
+src/Ground.cpp
+
+src/Application.h
+src/Application.cpp
 )
 
 # Include directories

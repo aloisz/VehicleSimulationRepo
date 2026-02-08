@@ -7,11 +7,43 @@
     <ClCompile Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Physics.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Vehicle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\GameObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Ground.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Application.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Physics.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Vehicle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\GameObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Ground.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Application.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{78C20AE3-88F9-3EFB-B2E6-7A15299E4064}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Source Files">
       <UniqueIdentifier>{12CE6655-AF5F-394B-B708-B1CCC59B8D27}</UniqueIdentifier>
     </Filter>

@@ -70,7 +70,7 @@ events:
       The output was:
       0
       MSBuild version 17.13.19+0d9f5a35a for .NET Framework
-      Build started 2/2/2026 10:24:43 PM.
+      Build started 2/2/2026 10:59:15 PM.
       
       Project "D:\\C++\\VehicleSimulationRepo\\VehicleSim\\VehicleSim\\build\\CMakeFiles\\4.2.3\\CompilerIdC\\CompilerIdC.vcxproj" on node 1 (default targets).
       PrepareForBuild:
@@ -108,7 +108,7 @@ events:
           0 Warning(s)
           0 Error(s)
       
-      Time Elapsed 00:00:00.54
+      Time Elapsed 00:00:00.59
       
       
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
@@ -1228,7 +1228,7 @@ events:
       The output was:
       0
       MSBuild version 17.13.19+0d9f5a35a for .NET Framework
-      Build started 2/2/2026 10:24:44 PM.
+      Build started 2/2/2026 10:59:16 PM.
       
       Project "D:\\C++\\VehicleSimulationRepo\\VehicleSim\\VehicleSim\\build\\CMakeFiles\\4.2.3\\CompilerIdCXX\\CompilerIdCXX.vcxproj" on node 1 (default targets).
       PrepareForBuild:
@@ -1986,8 +1986,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "D:/C++/VehicleSimulationRepo/VehicleSim/VehicleSim/build/CMakeFiles/CMakeScratch/TryCompile-pilyns"
-      binary: "D:/C++/VehicleSimulationRepo/VehicleSim/VehicleSim/build/CMakeFiles/CMakeScratch/TryCompile-pilyns"
+      source: "D:/C++/VehicleSimulationRepo/VehicleSim/VehicleSim/build/CMakeFiles/CMakeScratch/TryCompile-9n32xc"
+      binary: "D:/C++/VehicleSimulationRepo/VehicleSim/VehicleSim/build/CMakeFiles/CMakeScratch/TryCompile-9n32xc"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -2000,39 +2000,39 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'D:/C++/VehicleSimulationRepo/VehicleSim/VehicleSim/build/CMakeFiles/CMakeScratch/TryCompile-pilyns'
+        Change Dir: 'D:/C++/VehicleSimulationRepo/VehicleSim/VehicleSim/build/CMakeFiles/CMakeScratch/TryCompile-9n32xc'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_dd294.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_a3cc3.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         MSBuild version 17.13.19+0d9f5a35a for .NET Framework
-        Build started 2/2/2026 10:24:44 PM.
+        Build started 2/2/2026 10:59:17 PM.
         
-        Project "D:\\C++\\VehicleSimulationRepo\\VehicleSim\\VehicleSim\\build\\CMakeFiles\\CMakeScratch\\TryCompile-pilyns\\cmTC_dd294.vcxproj" on node 1 (default targets).
+        Project "D:\\C++\\VehicleSimulationRepo\\VehicleSim\\VehicleSim\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9n32xc\\cmTC_a3cc3.vcxproj" on node 1 (default targets).
         PrepareForBuild:
           Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "D:\\C++\\VehicleSimulationRepo\\VehicleSim\\VehicleSim\\build\\CMakeFiles\\CMakeScratch\\TryCompile-pilyns\\Debug\\".
-          Creating directory "cmTC_dd294.dir\\Debug\\cmTC_dd294.tlog\\".
+          Creating directory "D:\\C++\\VehicleSimulationRepo\\VehicleSim\\VehicleSim\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9n32xc\\Debug\\".
+          Creating directory "cmTC_a3cc3.dir\\Debug\\cmTC_a3cc3.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_dd294.dir\\Debug\\cmTC_dd294.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_dd294.dir\\Debug\\cmTC_dd294.tlog\\unsuccessfulbuild".
+          Creating "cmTC_a3cc3.dir\\Debug\\cmTC_a3cc3.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_a3cc3.dir\\Debug\\cmTC_a3cc3.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_dd294.dir\\Debug\\\\" /Fd"cmTC_dd294.dir\\Debug\\vc143.pdb" /external:W1 /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.2\\Modules\\CMakeCCompilerABI.c"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_a3cc3.dir\\Debug\\\\" /Fd"cmTC_a3cc3.dir\\Debug\\vc143.pdb" /external:W1 /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.2\\Modules\\CMakeCCompilerABI.c"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.43.34810 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_dd294.dir\\Debug\\\\" /Fd"cmTC_dd294.dir\\Debug\\vc143.pdb" /external:W1 /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.2\\Modules\\CMakeCCompilerABI.c"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_a3cc3.dir\\Debug\\\\" /Fd"cmTC_a3cc3.dir\\Debug\\vc143.pdb" /external:W1 /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.2\\Modules\\CMakeCCompilerABI.c"
           CMakeCCompilerABI.c
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\bin\\HostX64\\x64\\link.exe /OUT:"D:\\C++\\VehicleSimulationRepo\\VehicleSim\\VehicleSim\\build\\CMakeFiles\\CMakeScratch\\TryCompile-pilyns\\Debug\\cmTC_dd294.exe" /INCREMENTAL /ILK:"cmTC_dd294.dir\\Debug\\cmTC_dd294.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/C++/VehicleSimulationRepo/VehicleSim/VehicleSim/build/CMakeFiles/CMakeScratch/TryCompile-pilyns/Debug/cmTC_dd294.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"D:/C++/VehicleSimulationRepo/VehicleSim/VehicleSim/build/CMakeFiles/CMakeScratch/TryCompile-pilyns/Debug/cmTC_dd294.lib" /MACHINE:X64  /machine:x64 cmTC_dd294.dir\\Debug\\CMakeCCompilerABI.obj
-          cmTC_dd294.vcxproj -> D:\\C++\\VehicleSimulationRepo\\VehicleSim\\VehicleSim\\build\\CMakeFiles\\CMakeScratch\\TryCompile-pilyns\\Debug\\cmTC_dd294.exe
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\bin\\HostX64\\x64\\link.exe /OUT:"D:\\C++\\VehicleSimulationRepo\\VehicleSim\\VehicleSim\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9n32xc\\Debug\\cmTC_a3cc3.exe" /INCREMENTAL /ILK:"cmTC_a3cc3.dir\\Debug\\cmTC_a3cc3.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/C++/VehicleSimulationRepo/VehicleSim/VehicleSim/build/CMakeFiles/CMakeScratch/TryCompile-9n32xc/Debug/cmTC_a3cc3.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"D:/C++/VehicleSimulationRepo/VehicleSim/VehicleSim/build/CMakeFiles/CMakeScratch/TryCompile-9n32xc/Debug/cmTC_a3cc3.lib" /MACHINE:X64  /machine:x64 cmTC_a3cc3.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_a3cc3.vcxproj -> D:\\C++\\VehicleSimulationRepo\\VehicleSim\\VehicleSim\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9n32xc\\Debug\\cmTC_a3cc3.exe
         FinalizeBuildStatus:
-          Deleting file "cmTC_dd294.dir\\Debug\\cmTC_dd294.tlog\\unsuccessfulbuild".
-          Touching "cmTC_dd294.dir\\Debug\\cmTC_dd294.tlog\\cmTC_dd294.lastbuildstate".
-        Done Building Project "D:\\C++\\VehicleSimulationRepo\\VehicleSim\\VehicleSim\\build\\CMakeFiles\\CMakeScratch\\TryCompile-pilyns\\cmTC_dd294.vcxproj" (default targets).
+          Deleting file "cmTC_a3cc3.dir\\Debug\\cmTC_a3cc3.tlog\\unsuccessfulbuild".
+          Touching "cmTC_a3cc3.dir\\Debug\\cmTC_a3cc3.tlog\\cmTC_a3cc3.lastbuildstate".
+        Done Building Project "D:\\C++\\VehicleSimulationRepo\\VehicleSim\\VehicleSim\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9n32xc\\cmTC_a3cc3.vcxproj" (default targets).
         
         Build succeeded.
             0 Warning(s)
             0 Error(s)
         
-        Time Elapsed 00:00:00.34
+        Time Elapsed 00:00:00.36
         
       exitCode: 0
   -
@@ -2072,8 +2072,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "D:/C++/VehicleSimulationRepo/VehicleSim/VehicleSim/build/CMakeFiles/CMakeScratch/TryCompile-ecjsci"
-      binary: "D:/C++/VehicleSimulationRepo/VehicleSim/VehicleSim/build/CMakeFiles/CMakeScratch/TryCompile-ecjsci"
+      source: "D:/C++/VehicleSimulationRepo/VehicleSim/VehicleSim/build/CMakeFiles/CMakeScratch/TryCompile-2if3qp"
+      binary: "D:/C++/VehicleSimulationRepo/VehicleSim/VehicleSim/build/CMakeFiles/CMakeScratch/TryCompile-2if3qp"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -2087,33 +2087,33 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'D:/C++/VehicleSimulationRepo/VehicleSim/VehicleSim/build/CMakeFiles/CMakeScratch/TryCompile-ecjsci'
+        Change Dir: 'D:/C++/VehicleSimulationRepo/VehicleSim/VehicleSim/build/CMakeFiles/CMakeScratch/TryCompile-2if3qp'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_5ea4a.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_4f530.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         MSBuild version 17.13.19+0d9f5a35a for .NET Framework
-        Build started 2/2/2026 10:24:45 PM.
+        Build started 2/2/2026 10:59:17 PM.
         
-        Project "D:\\C++\\VehicleSimulationRepo\\VehicleSim\\VehicleSim\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ecjsci\\cmTC_5ea4a.vcxproj" on node 1 (default targets).
+        Project "D:\\C++\\VehicleSimulationRepo\\VehicleSim\\VehicleSim\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2if3qp\\cmTC_4f530.vcxproj" on node 1 (default targets).
         PrepareForBuild:
           Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "D:\\C++\\VehicleSimulationRepo\\VehicleSim\\VehicleSim\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ecjsci\\Debug\\".
-          Creating directory "cmTC_5ea4a.dir\\Debug\\cmTC_5ea4a.tlog\\".
+          Creating directory "D:\\C++\\VehicleSimulationRepo\\VehicleSim\\VehicleSim\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2if3qp\\Debug\\".
+          Creating directory "cmTC_4f530.dir\\Debug\\cmTC_4f530.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_5ea4a.dir\\Debug\\cmTC_5ea4a.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_5ea4a.dir\\Debug\\cmTC_5ea4a.tlog\\unsuccessfulbuild".
+          Creating "cmTC_4f530.dir\\Debug\\cmTC_4f530.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_4f530.dir\\Debug\\cmTC_4f530.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /Fo"cmTC_5ea4a.dir\\Debug\\\\" /Fd"cmTC_5ea4a.dir\\Debug\\vc143.pdb" /external:W1 /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /Fo"cmTC_4f530.dir\\Debug\\\\" /Fd"cmTC_4f530.dir\\Debug\\vc143.pdb" /external:W1 /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.43.34810 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /Fo"cmTC_5ea4a.dir\\Debug\\\\" /Fd"cmTC_5ea4a.dir\\Debug\\vc143.pdb" /external:W1 /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /Fo"cmTC_4f530.dir\\Debug\\\\" /Fd"cmTC_4f530.dir\\Debug\\vc143.pdb" /external:W1 /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"
           CMakeCXXCompilerABI.cpp
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\bin\\HostX64\\x64\\link.exe /OUT:"D:\\C++\\VehicleSimulationRepo\\VehicleSim\\VehicleSim\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ecjsci\\Debug\\cmTC_5ea4a.exe" /INCREMENTAL /ILK:"cmTC_5ea4a.dir\\Debug\\cmTC_5ea4a.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/C++/VehicleSimulationRepo/VehicleSim/VehicleSim/build/CMakeFiles/CMakeScratch/TryCompile-ecjsci/Debug/cmTC_5ea4a.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"D:/C++/VehicleSimulationRepo/VehicleSim/VehicleSim/build/CMakeFiles/CMakeScratch/TryCompile-ecjsci/Debug/cmTC_5ea4a.lib" /MACHINE:X64  /machine:x64 cmTC_5ea4a.dir\\Debug\\CMakeCXXCompilerABI.obj
-          cmTC_5ea4a.vcxproj -> D:\\C++\\VehicleSimulationRepo\\VehicleSim\\VehicleSim\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ecjsci\\Debug\\cmTC_5ea4a.exe
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\bin\\HostX64\\x64\\link.exe /OUT:"D:\\C++\\VehicleSimulationRepo\\VehicleSim\\VehicleSim\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2if3qp\\Debug\\cmTC_4f530.exe" /INCREMENTAL /ILK:"cmTC_4f530.dir\\Debug\\cmTC_4f530.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/C++/VehicleSimulationRepo/VehicleSim/VehicleSim/build/CMakeFiles/CMakeScratch/TryCompile-2if3qp/Debug/cmTC_4f530.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"D:/C++/VehicleSimulationRepo/VehicleSim/VehicleSim/build/CMakeFiles/CMakeScratch/TryCompile-2if3qp/Debug/cmTC_4f530.lib" /MACHINE:X64  /machine:x64 cmTC_4f530.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_4f530.vcxproj -> D:\\C++\\VehicleSimulationRepo\\VehicleSim\\VehicleSim\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2if3qp\\Debug\\cmTC_4f530.exe
         FinalizeBuildStatus:
-          Deleting file "cmTC_5ea4a.dir\\Debug\\cmTC_5ea4a.tlog\\unsuccessfulbuild".
-          Touching "cmTC_5ea4a.dir\\Debug\\cmTC_5ea4a.tlog\\cmTC_5ea4a.lastbuildstate".
-        Done Building Project "D:\\C++\\VehicleSimulationRepo\\VehicleSim\\VehicleSim\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ecjsci\\cmTC_5ea4a.vcxproj" (default targets).
+          Deleting file "cmTC_4f530.dir\\Debug\\cmTC_4f530.tlog\\unsuccessfulbuild".
+          Touching "cmTC_4f530.dir\\Debug\\cmTC_4f530.tlog\\cmTC_4f530.lastbuildstate".
+        Done Building Project "D:\\C++\\VehicleSimulationRepo\\VehicleSim\\VehicleSim\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2if3qp\\cmTC_4f530.vcxproj" (default targets).
         
         Build succeeded.
             0 Warning(s)

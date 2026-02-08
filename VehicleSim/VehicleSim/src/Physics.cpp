@@ -1,7 +1,23 @@
-#include "Physics.h"
-#include <btBulletDynamicsCommon.h>
 
-btDiscreteDynamicsWorld* world = nullptr;
+#include "Physics.h"
+
+Physics::Physics()
+    : broadphase(nullptr)
+    , collisionConfig(nullptr)
+    , dispatcher(nullptr)
+    , solver(nullptr)
+    , world(nullptr)
+{
+}
+
+Physics::~Physics()
+{
+    if (world) delete world;
+    if (solver) delete solver;
+    if (dispatcher) delete dispatcher;
+    if (collisionConfig) delete collisionConfig;
+    if (broadphase) delete broadphase;
+}
 
 void Physics::init()
 {
@@ -15,43 +31,12 @@ void Physics::init()
     );
 
     world->setGravity(btVector3(0, -9.81f, 0));
-
-    // Ground plane
-    btCollisionShape* groundShape =
-        new btStaticPlaneShape(btVector3(0, 1, 0), 0);
-
-    btDefaultMotionState* groundMotion =
-        new btDefaultMotionState(btTransform::getIdentity());
-
-    btRigidBody::btRigidBodyConstructionInfo groundInfo(
-        0.0f, groundMotion, groundShape
-    );
-
-    world->addRigidBody(new btRigidBody(groundInfo));
-
-    // Falling box
-    btCollisionShape* boxShape =
-        new btBoxShape(btVector3(1, 1, 1));
-
-    btTransform boxTransform;
-    boxTransform.setIdentity();
-    boxTransform.setOrigin(btVector3(0, 10, 0));
-
-    btDefaultMotionState* boxMotion =
-        new btDefaultMotionState(boxTransform);
-
-    btScalar mass = 1.0f;
-    btVector3 inertia(0, 0, 0);
-    boxShape->calculateLocalInertia(mass, inertia);
-
-    btRigidBody::btRigidBodyConstructionInfo boxInfo(
-        mass, boxMotion, boxShape, inertia
-    );
-
-    world->addRigidBody(new btRigidBody(boxInfo));
 }
 
 void Physics::stepSimulation(float deltaTime)
 {
-    world->stepSimulation(deltaTime);
+    if (world)
+    {
+        world->stepSimulation(deltaTime, 10);
+    }
 }

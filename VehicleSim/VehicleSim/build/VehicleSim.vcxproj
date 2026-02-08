@@ -414,7 +414,16 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\main.cpp" />
+    <ClInclude Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Physics.h" />
     <ClCompile Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Physics.cpp" />
+    <ClInclude Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Vehicle.h" />
+    <ClCompile Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Vehicle.cpp" />
+    <ClInclude Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\GameObject.h" />
+    <ClCompile Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\GameObject.cpp" />
+    <ClInclude Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Ground.h" />
+    <ClCompile Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Ground.cpp" />
+    <ClInclude Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Application.h" />
+    <ClCompile Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Application.cpp" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

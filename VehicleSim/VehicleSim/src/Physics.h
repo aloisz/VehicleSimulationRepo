@@ -4,8 +4,12 @@
 class Physics
 {
 public:
+    Physics();
+    ~Physics();
+
     void init();
     void stepSimulation(float deltaTime);
+    btDiscreteDynamicsWorld* getWorld() { return world; }
 
 private:
     btBroadphaseInterface* broadphase = nullptr;
