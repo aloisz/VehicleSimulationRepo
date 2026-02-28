@@ -5,7 +5,6 @@
 Ground::Ground(btDiscreteDynamicsWorld* world)
     : size(50.0f)
 {
-    // Create ground plane collision shape
     collisionShape = new btStaticPlaneShape(btVector3(0, 1, 0), 0);
 
     btTransform groundTransform;
@@ -29,7 +28,7 @@ void Ground::render()
 {
     glPushMatrix();
 
-    // Draw a grid for the ground
+    // Draw a grid
     glColor3f(0.3f, 0.5f, 0.3f);
     glBegin(GL_LINES);
 

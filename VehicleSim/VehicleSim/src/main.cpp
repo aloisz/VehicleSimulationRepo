@@ -1,4 +1,3 @@
-// main.cpp (updated)
 #include <iostream>
 #include <GL/freeglut.h>
 #include "Application.h"
@@ -16,10 +15,16 @@ void setupCamera()
 
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
+
+    btVector3 vehiclePos = vehicle->GetVehiclePosition();
+    btVector3 cameraOffset(15.0f, 10.0f, 15.0f); 
+
+    btVector3 cameraPos = vehiclePos + cameraOffset;
+    
     gluLookAt(
-        15, 10, 15,  // Camera position
-        0, 0, 0,     // Look at point
-        0, 1, 0      // Up vector
+        cameraPos.getX(), cameraPos.getY(), cameraPos.getZ(),
+        vehicle->GetVehiclePosition().getX(), vehicle->GetVehiclePosition().getY(), vehicle->GetVehiclePosition().getZ(),
+        0, 1, 0
     );
 }
 
@@ -27,9 +32,8 @@ void display()
 {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-    setupCamera();
-
     app.update(1.0f / 60.0f);
+    setupCamera();
     app.render();
 
     glutSwapBuffers();
@@ -64,8 +68,7 @@ void handleKeypress(unsigned char key, int x, int y)
         app.cleanup();
         exit(0);
     }
-
-    // Simple vehicle controls
+    
     if (vehicle)
     {
         float force = 50000.0f;
