@@ -17,7 +17,7 @@ void setupCamera()
     glLoadIdentity();
 
     btVector3 vehiclePos = vehicle->GetVehiclePosition();
-    btVector3 cameraOffset(15.0f, 10.0f, 15.0f); 
+    btVector3 cameraOffset(15.0f, 15.0f, 15.0f); 
 
     btVector3 cameraPos = vehiclePos + cameraOffset;
     

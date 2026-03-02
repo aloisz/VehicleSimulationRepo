@@ -1,10 +1,8 @@
 
 
 #include "Vehicle.h"
-
 #include <iostream>
 #include <GL/freeglut.h>
-
 #include "DebugDrawRay.h"
 
 Vehicle::Vehicle(btDiscreteDynamicsWorld* world, const btVector3& position)
@@ -24,12 +22,12 @@ Vehicle::Vehicle(btDiscreteDynamicsWorld* world, const btVector3& position)
 
     motionState = new btDefaultMotionState(startTransform);
 
-    btScalar mass = 1000.0f;
+    vehicleMass = 1000.0f; // in kg
     btVector3 inertia(0, 0, 0);
-    collisionShape->calculateLocalInertia(mass, inertia);
+    collisionShape->calculateLocalInertia(vehicleMass, inertia);
 
     btRigidBody::btRigidBodyConstructionInfo rbInfo(
-        mass, motionState, collisionShape, inertia
+        vehicleMass, motionState, collisionShape, inertia
     );
 
     rigidBody = new btRigidBody(rbInfo);
@@ -38,7 +36,13 @@ Vehicle::Vehicle(btDiscreteDynamicsWorld* world, const btVector3& position)
     rigidBody->setActivationState(DISABLE_DEACTIVATION);
 
     worldRef = world;
-    worldRef->addRigidBody(rigidBody);
+
+    // avoiding collision from suspension with vehicle mesh
+    short vehicleGroup = btBroadphaseProxy::CharacterFilter;
+    short vehicleMask = btBroadphaseProxy::StaticFilter | btBroadphaseProxy::DefaultFilter;
+
+
+    worldRef->addRigidBody(rigidBody, vehicleGroup, vehicleMask);
 }
 
 Vehicle::~Vehicle()
@@ -52,33 +56,35 @@ void Vehicle::update(float deltaTime)
     float wheelOffsetY = -bodySize.y / 2.0f;
     float wheelOffsetZ = bodySize.z / 3.0f;
 
+    std::vector<float> X = { -wheelOffsetX, wheelOffsetX, -wheelOffsetX, wheelOffsetX };
+    std::vector<float> Z = { wheelOffsetZ,  wheelOffsetZ, -wheelOffsetZ, -wheelOffsetZ };
 
-
-    std::vector<float> X = {-wheelOffsetX,wheelOffsetX,-wheelOffsetX,wheelOffsetX};
-    std::vector<float> Z = {wheelOffsetZ,wheelOffsetZ,-wheelOffsetZ, -wheelOffsetZ};
+    const float gravity = 9.81f;
+    const float springStrength = 20000.0f;
+    const float damperStrength = 3000.0f;
+    const float restLength = 1.0f;
+    const float suspLength = 2.0f;
+    const float maxSuspForce = 50000.0f;
+    const float weightPerWheel = (vehicleMass * gravity) / 4.0f;
 
     for (int i = 0; i < 4; i++)
     {
-        // Wheel position in local space 
         btVector3 wheelLocalPos(X[i], wheelOffsetY, Z[i]);
 
-        // Get chassis world transform
         btTransform chassisTransform;
         rigidBody->getMotionState()->getWorldTransform(chassisTransform);
 
-        // Convert wheel position to world space
         btVector3 rayFrom = chassisTransform * wheelLocalPos;
-        
-        // Suspension direction
-        btVector3 suspensionDir = btVector3(0, -1, 0);
-        float suspensionLength = 2.0f;
-        
-        btVector3 rayTo = rayFrom + suspensionDir * suspensionLength;
+        btVector3 suspensionDir(0, -1, 0);
+        btVector3 rayTo = rayFrom + suspensionDir * suspLength;
+
         btCollisionWorld::ClosestRayResultCallback rayCallback(rayFrom, rayTo);
-        
+        rayCallback.m_collisionFilterGroup = btBroadphaseProxy::DefaultFilter;
+        rayCallback.m_collisionFilterMask = btBroadphaseProxy::StaticFilter | btBroadphaseProxy::DefaultFilter;
+
         worldRef->rayTest(rayFrom, rayTo, rayCallback);
         DebugDrawRay::addRaycast(rayFrom, rayTo, rayCallback);
-        
+
         if (rayCallback.hasHit())
         {
             btVector3 hitPoint = rayCallback.m_hitPointWorld;
@@ -86,17 +92,34 @@ void Vehicle::update(float deltaTime)
 
             float hitDistance = (rayFrom - hitPoint).length();
 
-            float restLength = 1.0f;
-            float compression = restLength - hitDistance;
+            // Spring force
+            float suspensionCompression = suspLength - hitDistance;  
+            float compressionFromRest = suspensionCompression - restLength;
+            float springForce = springStrength * compressionFromRest + weightPerWheel;
 
-            float springStrength = 20000.0f;
-            float damping = 3000.0f;
+            // Damping force
+            float compressionVelocity = 0.0f;
+            if (deltaTime > 0.0f)
+            {
+                compressionVelocity = (suspensionCompression - previousSuspensionCompressions[i]) / deltaTime;
+            }
+            float dampingForce = compressionVelocity * damperStrength;
 
-            float forceMagnitude = compression * springStrength;
-            btVector3 force = hitNormal * forceMagnitude;
+            // Total force
+            float totalSuspensionForce = springForce + dampingForce;
+            totalSuspensionForce = glm::clamp(totalSuspensionForce, 0.0f, maxSuspForce);
 
-            rigidBody->applyForce(force, rayFrom - rigidBody->getCenterOfMassPosition());
-            std::cout << "Suspension hit distance: " << hitDistance << std::endl;
+            // Apply at wheel contact point
+            btVector3 force = hitNormal * totalSuspensionForce;
+            btVector3 forceOffset = rayFrom - rigidBody->getCenterOfMassPosition();
+            rigidBody->applyForce(force, forceOffset);
+
+            previousSuspensionCompressions[i] = suspensionCompression;
+        }
+        else
+        {
+            // Wheel not touching collisions
+            previousSuspensionCompressions[i] = 0.0f;
         }
     }
     
@@ -181,7 +204,7 @@ void Vehicle::render()
     float wheelOffsetZ = bodySize.z / 3.0f;
 
     // FL
-    glPushMatrix();
+    /*glPushMatrix();
     glTranslatef(-wheelOffsetX, wheelOffsetY, wheelOffsetZ);
     renderBox(wheelSize.x, wheelSize.y, wheelSize.z);
     glPopMatrix();
@@ -202,7 +225,7 @@ void Vehicle::render()
     glPushMatrix();
     glTranslatef(wheelOffsetX, wheelOffsetY, -wheelOffsetZ);
     renderBox(wheelSize.x, wheelSize.y, wheelSize.z);
-    glPopMatrix();
+    glPopMatrix();*/
 
     glPopMatrix();
 

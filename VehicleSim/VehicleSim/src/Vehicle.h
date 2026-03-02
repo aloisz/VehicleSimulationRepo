@@ -74,5 +74,9 @@ private:
     glm::vec3 bodySize;
     glm::vec3 wheelSize;
     btDiscreteDynamicsWorld* worldRef;
+
+
+    btScalar vehicleMass;
+    std::vector<float> previousSuspensionCompressions = { 0,0,0,0 };
 };
 
