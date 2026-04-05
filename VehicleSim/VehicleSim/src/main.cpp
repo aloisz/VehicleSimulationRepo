@@ -17,7 +17,7 @@ void setupCamera()
     glLoadIdentity();
 
     btVector3 vehiclePos = vehicle->GetVehiclePosition();
-    btVector3 cameraOffset(15.0f, 15.0f, 15.0f); 
+    btVector3 cameraOffset(15.0f, 0.0f, 15.0f); 
 
     btVector3 cameraPos = vehiclePos + cameraOffset;
     
@@ -109,7 +109,7 @@ int main(int argc, char** argv)
     Ground* ground = new Ground(app.getPhysics().getWorld());
     app.addGameObject(ground);
 
-    vehicle = new Vehicle(app.getPhysics().getWorld(), btVector3(0, 5, 0));
+    vehicle = new Vehicle(app.getPhysics().getWorld(), btVector3(0, 10, 0));
     app.addGameObject(vehicle);
 
     glutDisplayFunc(display);

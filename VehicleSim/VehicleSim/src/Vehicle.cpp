@@ -59,7 +59,7 @@ void Vehicle::update(float deltaTime)
     std::vector<float> X = { -wheelOffsetX, wheelOffsetX, -wheelOffsetX, wheelOffsetX };
     std::vector<float> Z = { wheelOffsetZ,  wheelOffsetZ, -wheelOffsetZ, -wheelOffsetZ };
 
-    const float gravity = 9.81f;
+    const float gravity = worldRef->getGravity().getY();
     const float springStrength = 20000.0f;
     const float damperStrength = 3000.0f;
     const float restLength = 1.0f;
