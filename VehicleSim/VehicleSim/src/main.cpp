@@ -49,7 +49,7 @@ namespace
         float dt = static_cast<float>(nowMs - g_lastElapsedMs) / 1000.0f;
         g_lastElapsedMs = nowMs;
 
-        // First frame, or a paused window: do not hand a garbage dt to the sim.
+        // First frame, or a paused window => do not hand a garbage dt to the sim
         if (dt <= 0.0f || dt > 0.25f) dt = 1.0f / 60.0f;
 
         g_app.Update(dt);
@@ -102,7 +102,6 @@ int main(int argc, char** argv)
     glutInitWindowSize(g_windowWidth, g_windowHeight);
     glutCreateWindow("Vehicle Simulation");
 
-    // Close cleanly instead of calling exit() from inside a callback.
     glutSetOption(GLUT_ACTION_ON_WINDOW_CLOSE, GLUT_ACTION_GLUTMAINLOOP_RETURNS);
 
     InitGL();
