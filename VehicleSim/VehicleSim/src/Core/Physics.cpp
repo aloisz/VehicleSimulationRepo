@@ -1,42 +1,53 @@
-
 #include "Physics.h"
-
-Physics::Physics()
-    : broadphase(nullptr)
-    , collisionConfig(nullptr)
-    , dispatcher(nullptr)
-    , solver(nullptr)
-    , world(nullptr)
-{
-}
+#include "Log.h"
 
 Physics::~Physics()
 {
-    if (world) delete world;
-    if (solver) delete solver;
-    if (dispatcher) delete dispatcher;
-    if (collisionConfig) delete collisionConfig;
-    if (broadphase) delete broadphase;
+    Shutdown();
 }
 
-void Physics::init()
+void Physics::Init(float gravity)
 {
-    broadphase = new btDbvtBroadphase();
-    collisionConfig = new btDefaultCollisionConfiguration();
-    dispatcher = new btCollisionDispatcher(collisionConfig);
-    solver = new btSequentialImpulseConstraintSolver();
-
-    world = new btDiscreteDynamicsWorld(
-        dispatcher, broadphase, solver, collisionConfig
-    );
-
-    world->setGravity(btVector3(0, -9.81f, 0));
-}
-
-void Physics::stepSimulation(float deltaTime)
-{
-    if (world)
+    if (_world)
     {
-        world->stepSimulation(deltaTime, 10);
+        Log::Warning("Physics::Init called twice", Log::Category::Physics);
+        return;
     }
+
+    _broadphase = new btDbvtBroadphase();
+    _collisionConfig = new btDefaultCollisionConfiguration();
+    _dispatcher = new btCollisionDispatcher(_collisionConfig);
+    _solver = new btSequentialImpulseConstraintSolver();
+
+    _world = new btDiscreteDynamicsWorld(_dispatcher, _broadphase, _solver, _collisionConfig);
+    _world->setGravity(btVector3(0.0f, gravity, 0.0f));
+
+    _world->getSolverInfo().m_numIterations = EXTRA_SOLVER_ITERATION;
+
+    Log::Info("Bullet world created", Log::Category::Physics);
+}
+
+void Physics::Shutdown()
+{
+    delete _world;
+    _world = nullptr;
+
+    delete _solver;
+    _solver = nullptr;
+
+    delete _dispatcher;
+    _dispatcher = nullptr;
+
+    delete _collisionConfig;
+    _collisionConfig = nullptr;
+
+    delete _broadphase;
+    _broadphase = nullptr;
+}
+
+void Physics::StepOnce(float fixedDeltaTime)
+{
+    if (!_world) return;
+
+    _world->stepSimulation(fixedDeltaTime, 1, fixedDeltaTime);
 }

@@ -5,7 +5,7 @@ events:
     kind: "message-v1"
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineSystem.cmake:212 (message)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:3 (project)"
     message: |
       The system is: Windows - 10.0.26200 - AMD64
   -
@@ -16,7 +16,7 @@ events:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:3 (project)"
     mode: "file"
     variable: "src_in"
     description: "Path to a file."
@@ -60,7 +60,7 @@ events:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:3 (project)"
     message: |
       Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
       Compiler:  
@@ -70,7 +70,7 @@ events:
       The output was:
       0
       MSBuild version 17.13.19+0d9f5a35a for .NET Framework
-      Build started 8/20/2026 12:07:27 AM.
+      Build started 8/20/2026 8:34:42 PM.
       
       Project "D:\\C++\\VehicleSimulationRepo\\VehicleSim\\VehicleSim\\build\\CMakeFiles\\4.2.3\\CompilerIdCXX\\CompilerIdCXX.vcxproj" on node 1 (default targets).
       PrepareForBuild:
@@ -108,7 +108,7 @@ events:
           0 Warning(s)
           0 Error(s)
       
-      Time Elapsed 00:00:00.63
+      Time Elapsed 00:00:01.34
       
       
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
@@ -125,7 +125,7 @@ events:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:65 (__resolve_tool_path)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:103 (__resolve_linker_path)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:3 (project)"
     mode: "program"
     variable: "_CMAKE_TOOL_WITH_PATH"
     description: "Path to a program."
@@ -317,7 +317,7 @@ events:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:65 (__resolve_tool_path)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:104 (__resolve_linker_path)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:3 (project)"
     mode: "program"
     variable: "_CMAKE_TOOL_WITH_PATH"
     description: "Path to a program."
@@ -554,7 +554,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:3 (project)"
     mode: "program"
     variable: "CMAKE_LINKER"
     description: "Path to a program."
@@ -744,7 +744,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:3 (project)"
     mode: "program"
     variable: "CMAKE_MT"
     description: "Path to a program."
@@ -981,7 +981,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:3 (project)"
     mode: "program"
     variable: "CMAKE_AR"
     description: "Path to a program."
@@ -1174,7 +1174,7 @@ events:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/Platform/Windows-MSVC.cmake:553 (__windows_compiler_msvc_enable_rc)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/Platform/Windows-MSVC-CXX.cmake:6 (__windows_compiler_msvc)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeCXXInformation.cmake:48 (include)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:3 (project)"
     mode: "program"
     variable: "CMAKE_RC_COMPILER"
     description: "RC compiler"
@@ -1633,12 +1633,12 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:3 (project)"
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "D:/C++/VehicleSimulationRepo/VehicleSim/VehicleSim/build/CMakeFiles/CMakeScratch/TryCompile-opg7qh"
-      binary: "D:/C++/VehicleSimulationRepo/VehicleSim/VehicleSim/build/CMakeFiles/CMakeScratch/TryCompile-opg7qh"
+      source: "D:/C++/VehicleSimulationRepo/VehicleSim/VehicleSim/build/CMakeFiles/CMakeScratch/TryCompile-obcuas"
+      binary: "D:/C++/VehicleSimulationRepo/VehicleSim/VehicleSim/build/CMakeFiles/CMakeScratch/TryCompile-obcuas"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -1652,39 +1652,39 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'D:/C++/VehicleSimulationRepo/VehicleSim/VehicleSim/build/CMakeFiles/CMakeScratch/TryCompile-opg7qh'
+        Change Dir: 'D:/C++/VehicleSimulationRepo/VehicleSim/VehicleSim/build/CMakeFiles/CMakeScratch/TryCompile-obcuas'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_ff391.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_a0ab0.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         MSBuild version 17.13.19+0d9f5a35a for .NET Framework
-        Build started 8/20/2026 12:07:27 AM.
+        Build started 8/20/2026 8:34:44 PM.
         
-        Project "D:\\C++\\VehicleSimulationRepo\\VehicleSim\\VehicleSim\\build\\CMakeFiles\\CMakeScratch\\TryCompile-opg7qh\\cmTC_ff391.vcxproj" on node 1 (default targets).
+        Project "D:\\C++\\VehicleSimulationRepo\\VehicleSim\\VehicleSim\\build\\CMakeFiles\\CMakeScratch\\TryCompile-obcuas\\cmTC_a0ab0.vcxproj" on node 1 (default targets).
         PrepareForBuild:
           Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "D:\\C++\\VehicleSimulationRepo\\VehicleSim\\VehicleSim\\build\\CMakeFiles\\CMakeScratch\\TryCompile-opg7qh\\Debug\\".
-          Creating directory "cmTC_ff391.dir\\Debug\\cmTC_ff391.tlog\\".
+          Creating directory "D:\\C++\\VehicleSimulationRepo\\VehicleSim\\VehicleSim\\build\\CMakeFiles\\CMakeScratch\\TryCompile-obcuas\\Debug\\".
+          Creating directory "cmTC_a0ab0.dir\\Debug\\cmTC_a0ab0.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_ff391.dir\\Debug\\cmTC_ff391.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_ff391.dir\\Debug\\cmTC_ff391.tlog\\unsuccessfulbuild".
+          Creating "cmTC_a0ab0.dir\\Debug\\cmTC_a0ab0.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_a0ab0.dir\\Debug\\cmTC_a0ab0.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /Fo"cmTC_ff391.dir\\Debug\\\\" /Fd"cmTC_ff391.dir\\Debug\\vc143.pdb" /external:W1 /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /Fo"cmTC_a0ab0.dir\\Debug\\\\" /Fd"cmTC_a0ab0.dir\\Debug\\vc143.pdb" /external:W1 /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.43.34810 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /Fo"cmTC_ff391.dir\\Debug\\\\" /Fd"cmTC_ff391.dir\\Debug\\vc143.pdb" /external:W1 /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /Fo"cmTC_a0ab0.dir\\Debug\\\\" /Fd"cmTC_a0ab0.dir\\Debug\\vc143.pdb" /external:W1 /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"
           CMakeCXXCompilerABI.cpp
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\bin\\HostX64\\x64\\link.exe /OUT:"D:\\C++\\VehicleSimulationRepo\\VehicleSim\\VehicleSim\\build\\CMakeFiles\\CMakeScratch\\TryCompile-opg7qh\\Debug\\cmTC_ff391.exe" /INCREMENTAL /ILK:"cmTC_ff391.dir\\Debug\\cmTC_ff391.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/C++/VehicleSimulationRepo/VehicleSim/VehicleSim/build/CMakeFiles/CMakeScratch/TryCompile-opg7qh/Debug/cmTC_ff391.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"D:/C++/VehicleSimulationRepo/VehicleSim/VehicleSim/build/CMakeFiles/CMakeScratch/TryCompile-opg7qh/Debug/cmTC_ff391.lib" /MACHINE:X64  /machine:x64 cmTC_ff391.dir\\Debug\\CMakeCXXCompilerABI.obj
-          cmTC_ff391.vcxproj -> D:\\C++\\VehicleSimulationRepo\\VehicleSim\\VehicleSim\\build\\CMakeFiles\\CMakeScratch\\TryCompile-opg7qh\\Debug\\cmTC_ff391.exe
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\bin\\HostX64\\x64\\link.exe /OUT:"D:\\C++\\VehicleSimulationRepo\\VehicleSim\\VehicleSim\\build\\CMakeFiles\\CMakeScratch\\TryCompile-obcuas\\Debug\\cmTC_a0ab0.exe" /INCREMENTAL /ILK:"cmTC_a0ab0.dir\\Debug\\cmTC_a0ab0.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/C++/VehicleSimulationRepo/VehicleSim/VehicleSim/build/CMakeFiles/CMakeScratch/TryCompile-obcuas/Debug/cmTC_a0ab0.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"D:/C++/VehicleSimulationRepo/VehicleSim/VehicleSim/build/CMakeFiles/CMakeScratch/TryCompile-obcuas/Debug/cmTC_a0ab0.lib" /MACHINE:X64  /machine:x64 cmTC_a0ab0.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_a0ab0.vcxproj -> D:\\C++\\VehicleSimulationRepo\\VehicleSim\\VehicleSim\\build\\CMakeFiles\\CMakeScratch\\TryCompile-obcuas\\Debug\\cmTC_a0ab0.exe
         FinalizeBuildStatus:
-          Deleting file "cmTC_ff391.dir\\Debug\\cmTC_ff391.tlog\\unsuccessfulbuild".
-          Touching "cmTC_ff391.dir\\Debug\\cmTC_ff391.tlog\\cmTC_ff391.lastbuildstate".
-        Done Building Project "D:\\C++\\VehicleSimulationRepo\\VehicleSim\\VehicleSim\\build\\CMakeFiles\\CMakeScratch\\TryCompile-opg7qh\\cmTC_ff391.vcxproj" (default targets).
+          Deleting file "cmTC_a0ab0.dir\\Debug\\cmTC_a0ab0.tlog\\unsuccessfulbuild".
+          Touching "cmTC_a0ab0.dir\\Debug\\cmTC_a0ab0.tlog\\cmTC_a0ab0.lastbuildstate".
+        Done Building Project "D:\\C++\\VehicleSimulationRepo\\VehicleSim\\VehicleSim\\build\\CMakeFiles\\CMakeScratch\\TryCompile-obcuas\\cmTC_a0ab0.vcxproj" (default targets).
         
         Build succeeded.
             0 Warning(s)
             0 Error(s)
         
-        Time Elapsed 00:00:00.35
+        Time Elapsed 00:00:00.39
         
       exitCode: 0
   -
@@ -1692,7 +1692,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:3 (project)"
     message: |
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|link\\.exe|lld-link(\\.exe)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
@@ -1710,7 +1710,7 @@ events:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/Internal/CMakeDetermineLinkerId.cmake:38 (message)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:299 (cmake_determine_linker_id)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:3 (project)"
     message: |
       Running the CXX compiler's linker: "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.43.34808/bin/HostX64/x64/link.exe" "-v"
       Microsoft (R) Incremental Linker Version 14.43.34810.0
@@ -1720,7 +1720,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/FindBullet.cmake:99 (find_path)"
       - "D:/vcpkg/scripts/buildsystems/vcpkg.cmake:908 (_find_package)"
-      - "CMakeLists.txt:15 (find_package)"
+      - "CMakeLists.txt:12 (find_package)"
     mode: "path"
     variable: "BULLET_INCLUDE_DIR"
     description: "Path to a file."
@@ -2006,7 +2006,7 @@ events:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/FindBullet.cmake:76 (find_library)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/FindBullet.cmake:108 (_FIND_BULLET_LIBRARY)"
       - "D:/vcpkg/scripts/buildsystems/vcpkg.cmake:908 (_find_package)"
-      - "CMakeLists.txt:15 (find_package)"
+      - "CMakeLists.txt:12 (find_package)"
     mode: "library"
     variable: "BULLET_DYNAMICS_LIBRARY"
     description: "Path to a library."
@@ -2348,7 +2348,7 @@ events:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/FindBullet.cmake:76 (find_library)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/FindBullet.cmake:109 (_FIND_BULLET_LIBRARY)"
       - "D:/vcpkg/scripts/buildsystems/vcpkg.cmake:908 (_find_package)"
-      - "CMakeLists.txt:15 (find_package)"
+      - "CMakeLists.txt:12 (find_package)"
     mode: "library"
     variable: "BULLET_DYNAMICS_LIBRARY_DEBUG"
     description: "Path to a library."
@@ -2617,7 +2617,7 @@ events:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/FindBullet.cmake:76 (find_library)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/FindBullet.cmake:110 (_FIND_BULLET_LIBRARY)"
       - "D:/vcpkg/scripts/buildsystems/vcpkg.cmake:908 (_find_package)"
-      - "CMakeLists.txt:15 (find_package)"
+      - "CMakeLists.txt:12 (find_package)"
     mode: "library"
     variable: "BULLET_COLLISION_LIBRARY"
     description: "Path to a library."
@@ -2959,7 +2959,7 @@ events:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/FindBullet.cmake:76 (find_library)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/FindBullet.cmake:111 (_FIND_BULLET_LIBRARY)"
       - "D:/vcpkg/scripts/buildsystems/vcpkg.cmake:908 (_find_package)"
-      - "CMakeLists.txt:15 (find_package)"
+      - "CMakeLists.txt:12 (find_package)"
     mode: "library"
     variable: "BULLET_COLLISION_LIBRARY_DEBUG"
     description: "Path to a library."
@@ -3228,7 +3228,7 @@ events:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/FindBullet.cmake:76 (find_library)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/FindBullet.cmake:112 (_FIND_BULLET_LIBRARY)"
       - "D:/vcpkg/scripts/buildsystems/vcpkg.cmake:908 (_find_package)"
-      - "CMakeLists.txt:15 (find_package)"
+      - "CMakeLists.txt:12 (find_package)"
     mode: "library"
     variable: "BULLET_MATH_LIBRARY"
     description: "Path to a library."
@@ -3781,7 +3781,7 @@ events:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/FindBullet.cmake:76 (find_library)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/FindBullet.cmake:113 (_FIND_BULLET_LIBRARY)"
       - "D:/vcpkg/scripts/buildsystems/vcpkg.cmake:908 (_find_package)"
-      - "CMakeLists.txt:15 (find_package)"
+      - "CMakeLists.txt:12 (find_package)"
     mode: "library"
     variable: "BULLET_MATH_LIBRARY_DEBUG"
     description: "Path to a library."
@@ -4472,7 +4472,7 @@ events:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/FindBullet.cmake:76 (find_library)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/FindBullet.cmake:114 (_FIND_BULLET_LIBRARY)"
       - "D:/vcpkg/scripts/buildsystems/vcpkg.cmake:908 (_find_package)"
-      - "CMakeLists.txt:15 (find_package)"
+      - "CMakeLists.txt:12 (find_package)"
     mode: "library"
     variable: "BULLET_SOFTBODY_LIBRARY"
     description: "Path to a library."
@@ -4814,7 +4814,7 @@ events:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/FindBullet.cmake:76 (find_library)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/FindBullet.cmake:115 (_FIND_BULLET_LIBRARY)"
       - "D:/vcpkg/scripts/buildsystems/vcpkg.cmake:908 (_find_package)"
-      - "CMakeLists.txt:15 (find_package)"
+      - "CMakeLists.txt:12 (find_package)"
     mode: "library"
     variable: "BULLET_SOFTBODY_LIBRARY_DEBUG"
     description: "Path to a library."
@@ -5085,7 +5085,7 @@ events:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/FindGLUT.cmake:79 (find_package)"
       - "D:/vcpkg/installed/x64-windows/share/glut/vcpkg-cmake-wrapper.cmake:1 (_find_package)"
       - "D:/vcpkg/scripts/buildsystems/vcpkg.cmake:862 (include)"
-      - "CMakeLists.txt:17 (find_package)"
+      - "CMakeLists.txt:14 (find_package)"
     mode: "program"
     variable: "PKG_CONFIG_EXECUTABLE"
     description: "pkg-config executable"
@@ -6159,7 +6159,7 @@ events:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/FindGLUT.cmake:88 (find_path)"
       - "D:/vcpkg/installed/x64-windows/share/glut/vcpkg-cmake-wrapper.cmake:1 (_find_package)"
       - "D:/vcpkg/scripts/buildsystems/vcpkg.cmake:862 (include)"
-      - "CMakeLists.txt:17 (find_package)"
+      - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "GLUT_INCLUDE_DIR"
     description: "Path to a file."
@@ -6323,7 +6323,7 @@ events:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/FindGLUT.cmake:92 (find_library)"
       - "D:/vcpkg/installed/x64-windows/share/glut/vcpkg-cmake-wrapper.cmake:1 (_find_package)"
       - "D:/vcpkg/scripts/buildsystems/vcpkg.cmake:862 (include)"
-      - "CMakeLists.txt:17 (find_package)"
+      - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "GLUT_glut_LIBRARY_RELEASE"
     description: "Path to a library."
@@ -6512,7 +6512,7 @@ events:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/FindGLUT.cmake:101 (find_library)"
       - "D:/vcpkg/installed/x64-windows/share/glut/vcpkg-cmake-wrapper.cmake:1 (_find_package)"
       - "D:/vcpkg/scripts/buildsystems/vcpkg.cmake:862 (include)"
-      - "CMakeLists.txt:17 (find_package)"
+      - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "GLUT_glut_LIBRARY_DEBUG"
     description: "Path to a library."
@@ -6663,7 +6663,7 @@ events:
     backtrace:
       - "D:/vcpkg/scripts/buildsystems/vcpkg.cmake:188 (find_program)"
       - "D:/vcpkg/scripts/buildsystems/vcpkg.cmake:621 (z_vcpkg_set_powershell_path)"
-      - "CMakeLists.txt:46 (add_executable)"
+      - "CMakeLists.txt:31 (add_executable)"
     mode: "program"
     variable: "Z_VCPKG_PWSH_PATH"
     description: "Path to a program."
@@ -7122,7 +7122,7 @@ events:
     backtrace:
       - "D:/vcpkg/scripts/buildsystems/vcpkg.cmake:193 (find_program)"
       - "D:/vcpkg/scripts/buildsystems/vcpkg.cmake:621 (z_vcpkg_set_powershell_path)"
-      - "CMakeLists.txt:46 (add_executable)"
+      - "CMakeLists.txt:31 (add_executable)"
     mode: "program"
     variable: "Z_VCPKG_BUILTIN_POWERSHELL_PATH"
     description: "Path to a program."

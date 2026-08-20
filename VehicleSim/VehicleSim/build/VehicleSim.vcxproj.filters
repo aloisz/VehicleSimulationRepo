@@ -1,61 +1,139 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Core\Application.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Core\Physics.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Core</Filter>
     </ClCompile>
     <ClCompile Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Core\Input.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Core</Filter>
     </ClCompile>
-    <ClCompile Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Render\Primitives.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Render\DebugDraw.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Core\Physics.cpp">
+      <Filter>Core</Filter>
     </ClCompile>
     <ClCompile Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Objects\Ground.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Objects</Filter>
     </ClCompile>
-    <ClCompile Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Vehicle\VehicleCore.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Render\DebugDraw.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Render\Primitives.cpp">
+      <Filter>Render</Filter>
     </ClCompile>
     <ClCompile Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Vehicle\Data\VehicleConfig.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Vehicle\Data</Filter>
     </ClCompile>
     <ClCompile Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Vehicle\Data\VehicleConfigLoader.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Vehicle\Data</Filter>
     </ClCompile>
-    <ClCompile Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Vehicle\Modules\VehicleInputModule.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Vehicle\Modules\VehicleEngineModule.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Vehicle\Modules\VehicleDrivetrainModule.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Vehicle\Modules\VehicleWheelModule.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Vehicle\Modules\VehiclePhysicsModule.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Vehicle\Data\VehicleContext.cpp">
+      <Filter>Vehicle\Data</Filter>
     </ClCompile>
     <ClCompile Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Vehicle\Modules\VehicleAerodynamicsModule.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Vehicle\Modules</Filter>
     </ClCompile>
+    <ClCompile Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Vehicle\Modules\VehicleDrivetrainModule.cpp">
+      <Filter>Vehicle\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Vehicle\Modules\VehicleEngineModule.cpp">
+      <Filter>Vehicle\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Vehicle\Modules\VehicleInputModule.cpp">
+      <Filter>Vehicle\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Vehicle\Modules\VehiclePhysicsModule.cpp">
+      <Filter>Vehicle\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Vehicle\Modules\VehicleWheelModule.cpp">
+      <Filter>Vehicle\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Vehicle\VehicleCore.cpp">
+      <Filter>Vehicle</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Core\Actor.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Core\Application.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Core\Input.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Core\Log.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Core\MathUtils.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Core\Physics.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Objects\Ground.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Render\DebugDraw.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Render\Primitives.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Vehicle\Data\VehicleConfig.h">
+      <Filter>Vehicle\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Vehicle\Data\VehicleConfigLoader.h">
+      <Filter>Vehicle\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Vehicle\Data\VehicleContext.h">
+      <Filter>Vehicle\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Vehicle\Modules\IVehicleModule.h">
+      <Filter>Vehicle\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Vehicle\Modules\VehicleAerodynamicsModule.h">
+      <Filter>Vehicle\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Vehicle\Modules\VehicleDrivetrainModule.h">
+      <Filter>Vehicle\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Vehicle\Modules\VehicleEngineModule.h">
+      <Filter>Vehicle\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Vehicle\Modules\VehicleInputModule.h">
+      <Filter>Vehicle\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Vehicle\Modules\VehiclePhysicsModule.h">
+      <Filter>Vehicle\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Vehicle\Modules\VehicleWheelModule.h">
+      <Filter>Vehicle\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Vehicle\VehicleCore.h">
+      <Filter>Vehicle</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{12CE6655-AF5F-394B-B708-B1CCC59B8D27}</UniqueIdentifier>
+    <Filter Include="Core">
+      <UniqueIdentifier>{3D0F1340-1296-3B08-9B37-F8F97A367788}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects">
+      <UniqueIdentifier>{B3F021AF-67F7-3C6D-A2F5-E48931F9D636}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Render">
+      <UniqueIdentifier>{EC982A9D-706B-3207-BD82-516377F2A224}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Vehicle">
+      <UniqueIdentifier>{D928C11E-34FF-3EF8-B4FB-552C2B6CEBC9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Vehicle\Data">
+      <UniqueIdentifier>{6E20C514-5CFA-3E45-B8B5-E8435040F61E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Vehicle\Modules">
+      <UniqueIdentifier>{D762B1B8-A156-3D0C-8A85-B1BE164925FB}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
