@@ -9,6 +9,8 @@
 #include "Core/Input.h"
 #include "Core/Log.h"
 #include "Core/MathUtils.h"
+#include "Vehicle/VehicleCore.h"
+#include "Vehicle/Data/VehicleConfigLoader.h"
 #include "Render/DebugDraw.h"
 
 using namespace MathUtils;
@@ -16,6 +18,7 @@ using namespace MathUtils;
 namespace
 {
     Application& g_app = Application::GetInstance();
+    Vehicle::VehicleCore* g_vehicle = nullptr;
 
     int g_windowWidth = 1280;
     int g_windowHeight = 720;
@@ -24,6 +27,13 @@ namespace
 
     btVector3 g_cameraPosition(0.0f, 6.0f, -12.0f);
     btVector3 g_cameraTarget(0.0f, 0.0f, 0.0f);
+    bool g_cameraInitialized = false;
+
+    const char* DEFAULT_CONFIG_PATHS[] = {
+        "config/vehicle.json",
+        "../config/vehicle.json",
+        "../../config/vehicle.json"
+    };
 
     void SetupProjection()
     {
@@ -93,6 +103,39 @@ namespace
 
         glClearColor(0.10f, 0.11f, 0.14f, 1.0f);
     }
+
+    Vehicle::VehicleConfig LoadVehicleConfig(int argc, char** argv)
+    {
+        Vehicle::VehicleConfig config = Vehicle::VehicleConfig::MakeDefault();
+
+        // Optional: pass a config path as the first argument.
+        std::string explicitPath;
+        if (argc > 1 && argv[1] && argv[1][0] != '-')
+            explicitPath = argv[1];
+
+        std::string error;
+
+        if (!explicitPath.empty())
+        {
+            if (Vehicle::VehicleConfigLoader::LoadFromFile(explicitPath, config, error))
+                return config;
+
+            Log::Error(error, Log::Category::Config);
+            Log::Warning("Falling back to the built-in default config", Log::Category::Config);
+            return Vehicle::VehicleConfig::MakeDefault();
+        }
+
+        for (const char* path : DEFAULT_CONFIG_PATHS)
+        {
+            Vehicle::VehicleConfig candidate = Vehicle::VehicleConfig::MakeDefault();
+            if (Vehicle::VehicleConfigLoader::LoadFromFile(path, candidate, error))
+                return candidate;
+        }
+
+        Log::Warning("No vehicle.json found on any default path, using the built-in config",
+            Log::Category::Config);
+        return config;
+    }
 }
 
 int main(int argc, char** argv)
@@ -107,6 +150,18 @@ int main(int argc, char** argv)
     InitGL();
 
     g_app.Init(1.0f / 120.0f);
+
+    const Vehicle::VehicleConfig config = LoadVehicleConfig(argc, argv);
+
+    g_vehicle = new Vehicle::VehicleCore(
+        g_app.GetPhysics().GetWorld(), config, btVector3(0.0f, 1.5f, 0.0f), 0.0f);
+    g_app.AddActor(g_vehicle);
+
+    if (!g_vehicle->IsOperational()) 
+    {
+        Log::Error("Vehicle failed to initialize", Log::Category::Vehicle);
+    }
+        
 
     glutIgnoreKeyRepeat(1);
 

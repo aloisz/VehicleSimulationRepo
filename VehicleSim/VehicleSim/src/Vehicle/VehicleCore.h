@@ -9,6 +9,8 @@
 #include "Modules/VehicleWheelModule.h"
 #include "Modules/VehicleDrivetrainModule.h"
 #include "Modules/VehiclePhysicsModule.h"
+#include "Data/VehicleConfig.h"
+#include "Data/VehicleRuntime.h"
 
 namespace Vehicle {
 
@@ -16,8 +18,12 @@ namespace Vehicle {
 	class VehicleCore : public Actor
 	{
 	public:
-		VehicleCore();
-		~VehicleCore();
+		VehicleCore(btDiscreteDynamicsWorld* world,
+			const VehicleConfig& config,
+			const btVector3& spawnPosition,
+			float spawnYaw = 0.0f);
+
+		~VehicleCore() override;
 
 		// === Actor lifecycle ===
 		void Awake() override;
@@ -41,6 +47,12 @@ namespace Vehicle {
 		VehicleDrivetrainModule& GetDrivetrainModule() { return _drivetrain; }
 		VehiclePhysicsModule& GetPhysicsModule() { return _physics; }
 
+		// === Data accessor ===
+		const VehicleConfig& GetConfig() const { return _config; }
+		const VehicleRuntime& GetRuntime() const { return _runtime; }
+
+		bool IsOperational() const { return _operational; }
+
 		btVector3 GetPosition() const;
 		btVector3 GetForward() const;
 
@@ -59,7 +71,6 @@ namespace Vehicle {
 		void RenderChassis() const;
 		void RenderWheels() const;
 
-
 		// === Modules ===
 		VehicleInputModule _input;
 		VehicleEngineModule _engine;
@@ -69,7 +80,9 @@ namespace Vehicle {
 		VehiclePhysicsModule _physics;
 
 		// === Data ===
+		VehicleConfig _config;
 		VehicleContext _context;
+		VehicleRuntime _runtime;
 
 		// === Bullet resources ===
 		btDiscreteDynamicsWorld* _world = nullptr;

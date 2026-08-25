@@ -1,0 +1,164 @@
+{
+    "name": "Reference Sedan",
+    "mass": 1400.0,
+    "bodySize": [1.9, 1.1, 4.4],
+    "centerOfMassOffset": [0.0, -0.35, 0.05],
+
+    "engine": {
+        "idleRPM": 850,
+        "maxRPM": 7000,
+        "peakTorqueRPM": 4200,
+        "maxTorque": 380,
+        "inertia": 0.35,
+        "engineBrakeTorque": 45
+    },
+
+    "gearbox": {
+        "ratios": [3.4, 2.1, 1.4, 1.05, 0.85, 0.7],
+        "finalDrive": 3.7,
+        "reverseRatio": 3.2,
+        "efficiency": 0.92,
+        "shiftTime": 0.25,
+        "upshiftRPM": 6300,
+        "downshiftRPM": 2600,
+        "clutchEngageRPM": 1400
+    },
+
+    "differential": {
+        "type": "RWD",
+        "frontBias": 0.4
+    },
+
+    "aerodynamics": {
+        "airDensity": 1.225,
+        "dragCoefficient": 0.34,
+        "frontalArea": 2.2,
+        "downforceCoefficient": 0.9,
+        "centerOfPressureOffset": [0.0, 0.2, -0.4]
+    },
+
+    "steering": {
+        "maxSteerAngleDeg": 33.0,
+        "speedSensitivity": 0.6,
+        "steerRateDegPerSec": 180.0,
+        "returnRateDegPerSec": 300.0
+    },
+
+    "brakes": {
+        "maxBrakeTorque": 3000,
+        "frontBias": 0.62,
+        "handbrakeTorque": 4000,
+        "absEnabled": true,
+        "absSlipThreshold": 0.14,
+        "tractionControlEnabled": true,
+        "tcSlipThreshold": 0.18
+    },
+
+    "antiRoll": {
+        "frontStiffness": 6000,
+        "rearStiffness": 4500
+    },
+
+    "wheels": [
+        {
+            "name": "FL",
+            "localOffset": [-0.78, -0.25, 1.35],
+            "radius": 0.34,
+            "width": 0.24,
+            "mass": 22,
+            "axle": 0,
+            "isSteerable": true,
+            "suspension": {
+                "length": 0.42,
+                "springStrength": 0,
+                "damperStrength": 4200,
+                "maxForce": 60000,
+                "restLength": 0.22
+            },
+            "tire": {
+                "peakSlipRatio": 0.12,
+                "peakSlipAngleDeg": 8.0,
+                "longGrip": 1.0,
+                "latGrip": 1.05,
+                "frictionCoefficient": 1.15,
+                "loadSensitivity": 0.25,
+                "rollingResistance": 0.015
+            }
+        },
+        {
+            "name": "FR",
+            "localOffset": [0.78, -0.25, 1.35],
+            "radius": 0.34,
+            "width": 0.24,
+            "mass": 22,
+            "axle": 0,
+            "isSteerable": true,
+            "suspension": {
+                "length": 0.42,
+                "springStrength": 0,
+                "damperStrength": 4200,
+                "maxForce": 60000,
+                "restLength": 0.22
+            },
+            "tire": {
+                "peakSlipRatio": 0.12,
+                "peakSlipAngleDeg": 8.0,
+                "longGrip": 1.0,
+                "latGrip": 1.05,
+                "frictionCoefficient": 1.15,
+                "loadSensitivity": 0.25,
+                "rollingResistance": 0.015
+            }
+        },
+        {
+            "name": "RL",
+            "localOffset": [-0.78, -0.25, -1.35],
+            "radius": 0.34,
+            "width": 0.26,
+            "mass": 24,
+            "axle": 1,
+            "isSteerable": false,
+            "suspension": {
+                "length": 0.42,
+                "springStrength": 0,
+                "damperStrength": 4000,
+                "maxForce": 60000,
+                "restLength": 0.23
+            },
+            "tire": {
+                "peakSlipRatio": 0.13,
+                "peakSlipAngleDeg": 9.0,
+                "longGrip": 1.05,
+                "latGrip": 1.0,
+                "frictionCoefficient": 1.15,
+                "loadSensitivity": 0.25,
+                "rollingResistance": 0.015
+            }
+        },
+        {
+            "name": "RR",
+            "localOffset": [0.78, -0.25, -1.35],
+            "radius": 0.34,
+            "width": 0.26,
+            "mass": 24,
+            "axle": 1,
+            "isSteerable": false,
+            "suspension": {
+                "length": 0.42,
+                "springStrength": 0,
+                "damperStrength": 4000,
+                "maxForce": 60000,
+                "restLength": 0.23
+            },
+            "tire": {
+                "peakSlipRatio": 0.13,
+                "peakSlipAngleDeg": 9.0,
+                "longGrip": 1.05,
+                "latGrip": 1.0,
+                "frictionCoefficient": 1.15,
+                "loadSensitivity": 0.25,
+                "rollingResistance": 0.015
+            }
+        }
+    ]
+}

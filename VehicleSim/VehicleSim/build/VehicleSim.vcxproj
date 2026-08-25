@@ -125,9 +125,18 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <PostBuildEvent>
-      <Message></Message>
+      <Message>	</Message>
       <Command>setlocal
 C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file D:/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary D:/C++/VehicleSimulationRepo/VehicleSim/VehicleSim/build/Debug/VehicleSim.exe -installedDir D:/vcpkg/installed/x64-windows/debug/bin -OutVariable out
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory D:/C++/VehicleSimulationRepo/VehicleSim/VehicleSim/config D:/C++/VehicleSimulationRepo/VehicleSim/VehicleSim/build/Debug/config
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -195,9 +204,18 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <PostBuildEvent>
-      <Message></Message>
+      <Message>	</Message>
       <Command>setlocal
 C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file D:/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary D:/C++/VehicleSimulationRepo/VehicleSim/VehicleSim/build/Release/VehicleSim.exe -installedDir D:/vcpkg/installed/x64-windows/bin -OutVariable out
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory D:/C++/VehicleSimulationRepo/VehicleSim/VehicleSim/config D:/C++/VehicleSimulationRepo/VehicleSim/VehicleSim/build/Release/config
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -265,9 +283,18 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <PostBuildEvent>
-      <Message></Message>
+      <Message>	</Message>
       <Command>setlocal
 C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file D:/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary D:/C++/VehicleSimulationRepo/VehicleSim/VehicleSim/build/MinSizeRel/VehicleSim.exe -installedDir D:/vcpkg/installed/x64-windows/bin -OutVariable out
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory D:/C++/VehicleSimulationRepo/VehicleSim/VehicleSim/config D:/C++/VehicleSimulationRepo/VehicleSim/VehicleSim/build/MinSizeRel/config
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -334,9 +361,18 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <PostBuildEvent>
-      <Message></Message>
+      <Message>	</Message>
       <Command>setlocal
 C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file D:/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary D:/C++/VehicleSimulationRepo/VehicleSim/VehicleSim/build/RelWithDebInfo/VehicleSim.exe -installedDir D:/vcpkg/installed/x64-windows/bin -OutVariable out
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory D:/C++/VehicleSimulationRepo/VehicleSim/VehicleSim/config D:/C++/VehicleSimulationRepo/VehicleSim/VehicleSim/build/RelWithDebInfo/config
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -450,6 +486,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Vehicle\Data\VehicleConfig.h" />
     <ClInclude Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Vehicle\Data\VehicleConfigLoader.h" />
     <ClInclude Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Vehicle\Data\VehicleContext.h" />
+    <ClInclude Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Vehicle\Data\VehicleRuntime.h" />
     <ClInclude Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Vehicle\Modules\IVehicleModule.h" />
     <ClInclude Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Vehicle\Modules\VehicleAerodynamicsModule.h" />
     <ClInclude Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Vehicle\Modules\VehicleDrivetrainModule.h" />

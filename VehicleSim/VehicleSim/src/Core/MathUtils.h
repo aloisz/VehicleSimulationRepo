@@ -7,6 +7,7 @@
 namespace MathUtils
 {
     constexpr float PI = 3.14159265358979323846f;
+    constexpr float RADIAN = 0.0174532925f;
     constexpr float DEG2RAD = PI / 180.0f;
     constexpr float RAD2DEG = 180.0f / PI;
     constexpr float RPM2RADS = 2.0f * PI / 60.0f;

@@ -88,6 +88,9 @@
     <ClInclude Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Vehicle\Data\VehicleContext.h">
       <Filter>Vehicle\Data</Filter>
     </ClInclude>
+    <ClInclude Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Vehicle\Data\VehicleRuntime.h">
+      <Filter>Vehicle\Data</Filter>
+    </ClInclude>
     <ClInclude Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Vehicle\Modules\IVehicleModule.h">
       <Filter>Vehicle\Modules</Filter>
     </ClInclude>

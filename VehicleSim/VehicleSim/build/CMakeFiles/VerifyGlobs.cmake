@@ -58,6 +58,7 @@ set(OLD_GLOB
   "D:/C++/VehicleSimulationRepo/VehicleSim/VehicleSim/src/Vehicle/Data/VehicleConfig.h"
   "D:/C++/VehicleSimulationRepo/VehicleSim/VehicleSim/src/Vehicle/Data/VehicleConfigLoader.h"
   "D:/C++/VehicleSimulationRepo/VehicleSim/VehicleSim/src/Vehicle/Data/VehicleContext.h"
+  "D:/C++/VehicleSimulationRepo/VehicleSim/VehicleSim/src/Vehicle/Data/VehicleRuntime.h"
   "D:/C++/VehicleSimulationRepo/VehicleSim/VehicleSim/src/Vehicle/Modules/IVehicleModule.h"
   "D:/C++/VehicleSimulationRepo/VehicleSim/VehicleSim/src/Vehicle/Modules/VehicleAerodynamicsModule.h"
   "D:/C++/VehicleSimulationRepo/VehicleSim/VehicleSim/src/Vehicle/Modules/VehicleDrivetrainModule.h"
