@@ -1,5 +1,5 @@
 {
-    "name": "Reference Sedan",
+    "name": "Config|Vehicle",
     "mass": 1400.0,
     "bodySize": [1.9, 1.1, 4.4],
     "centerOfMassOffset": [0.0, -0.35, 0.05],

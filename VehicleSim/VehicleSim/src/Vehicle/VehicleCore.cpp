@@ -32,10 +32,62 @@ Vehicle::VehicleCore::~VehicleCore()
 #pragma region LifeCycle
 void Vehicle::VehicleCore::Awake()
 {
+    if (!_world)
+    {
+        Log::Error("VehicleCore '" + GetName() + "': no physics world", Log::Category::Vehicle);
+        return;
+    }
+
+    if (!_config.Validate())
+    {
+        Log::Error("VehicleCore '" + GetName() + "': invalid config", Log::Category::Vehicle);
+        return;
+    }
+
+    if (!CreateRigidBody()) 
+    {
+        Log::Error("VehicleCore '" + GetName() + "': failed to CreateRigidBody", Log::Category::Vehicle);
+        return;
+    }
+
+
+    _runtime.Resize(_config.Wheels.size());
+    _runtime.EngineRPM = _config.Engine.IdleRPM;
+
+    _context.Config = &_config;
+    _context.Runtime = &_runtime;
+    _context.Body = _rigidBody;
+    _context.World = _world;
+
+    if (!InitializeModules())
+    {
+        Log::Error("VehicleCore '" + GetName() + "' modules are not registered",
+            Log::Category::Vehicle);
+        DestroyRigidBody();
+        return;
+    }
+
+    _operational = true;
+    Log::Info("VehicleCore '" + GetName() + "' ready", Log::Category::Vehicle);
 }
 
 void Vehicle::VehicleCore::Start()
 {
+}
+
+
+bool Vehicle::VehicleCore::InitializeModules()
+{
+    bool initialized = true;
+
+    initialized &= _input.Initialize(_context);
+    initialized &= _engine.Initialize(_context);
+    initialized &= _aerodynamics.Initialize(_context);
+    initialized &= _wheel.Initialize(_context);
+    initialized &= _drivetrain.Initialize(_context);
+    initialized &= _physics.Initialize(_context);
+
+    return initialized;
 }
 
 void Vehicle::VehicleCore::OnDestroy()
@@ -54,26 +106,43 @@ void Vehicle::VehicleCore::OnDestroy()
     _context = VehicleContext{};
     _operational = false;
 }
-
-bool Vehicle::VehicleCore::InitializeModules()
-{
-    bool initialized = true;
-
-    initialized &= _input.Initialize(_context);
-    initialized &= _engine.Initialize(_context);
-    initialized &= _aerodynamics.Initialize(_context);
-    initialized &= _wheel.Initialize(_context);
-    initialized &= _drivetrain.Initialize(_context);
-    initialized &= _physics.Initialize(_context);
-
-    return initialized;
-}
 #pragma endregion LifeCycle
 
 #pragma region Rigidbody
 bool Vehicle::VehicleCore::CreateRigidBody()
 {
-    return false;
+    _boxShape = new btBoxShape(btVector3(_config.BodySize.getX() * 0.5f,
+        _config.BodySize.getY() * 0.5f,
+        _config.BodySize.getZ() * 0.5f));
+
+    _compoundShape = new btCompoundShape();
+
+    btTransform childTransform;
+    childTransform.setIdentity();
+    childTransform.setOrigin(-_config.CenterOfMassOffset);
+    _compoundShape->addChildShape(childTransform, _boxShape);
+
+    btVector3 inertia(0.0f, 0.0f, 0.0f);
+    _compoundShape->calculateLocalInertia(_config.Mass, inertia);
+
+    _motionState = new btDefaultMotionState(_spawnTransform);
+
+    btRigidBody::btRigidBodyConstructionInfo info(
+        _config.Mass, _motionState, _compoundShape, inertia);
+
+    _rigidBody = new btRigidBody(info);
+    _rigidBody->setRestitution(0.1f);
+    _rigidBody->setFriction(0.5f);
+
+    _rigidBody->setDamping(0.0f, 0.05f);
+    _rigidBody->setActivationState(DISABLE_DEACTIVATION);
+
+    const short group = btBroadphaseProxy::CharacterFilter;
+    const short mask = btBroadphaseProxy::StaticFilter | btBroadphaseProxy::DefaultFilter;
+
+    _world->addRigidBody(_rigidBody, group, mask);
+
+    return true;
 }
 
 void Vehicle::VehicleCore::DestroyRigidBody()

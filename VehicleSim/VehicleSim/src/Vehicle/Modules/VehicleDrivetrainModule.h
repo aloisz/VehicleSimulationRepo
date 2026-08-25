@@ -24,5 +24,23 @@ namespace Vehicle
         void UpdateGearbox(float dt, VehicleContext& context);
         void UpdateClutch(float dt, VehicleContext& context);
         void DistributeTorque(VehicleContext& context);
+
+        void RequestGear(int gear, VehicleContext& context);
+
+        static float GetTotalRatio(const GearboxConfig& gearbox, int gear);
+
+        /// <summary>
+        /// Indices into Config->Wheels
+        /// </summary>
+        std::vector<size_t> _drivenWheels;
+        std::vector<size_t> _drivenFront;
+        std::vector<size_t> _drivenRear;
+
+        int _maxAxle = 0;
+
+        /// <summary>
+        /// in m/s
+        /// </summary>
+        static constexpr float REVERSE_ENGAGE_SPEED = 0.8f;
     };
 }

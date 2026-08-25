@@ -15,5 +15,12 @@ namespace Vehicle
         void Dispose() override;
 
         const char* GetName() const override { return "VehicleAerodynamicsModule"; }
+
+    private:
+        void ApplyDrag(VehicleContext& context);
+        void ApplyDowforce(VehicleContext& context);
+
+        float _dynamicPressureFactor = 0.0f;
+        float _lastSpeedSquared = 0.0f;
     };
 }

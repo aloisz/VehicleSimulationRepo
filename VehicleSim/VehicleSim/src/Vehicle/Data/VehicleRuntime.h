@@ -16,42 +16,61 @@ namespace Vehicle
         btVector3 HitPoint = btVector3(0, 0, 0);
         btVector3 HitNormal = btVector3(0, 1, 0);
 
+        /// <summary>
         /// World position of the suspension anchor on the chassis
+        /// </summary>
         btVector3 AnchorWorld = btVector3(0, 0, 0);
+        
+        /// <summary>
         /// World position of the wheel centre after suspension resolution
+        /// </summary>
         btVector3 WheelCenter = btVector3(0, 0, 0);
 
 
         // === Suspension ===
 
-        ///Anchor to wheel centre distance (m)
+        /// <summary>
+        /// Anchor to wheel centre distance (m)
+        /// </summary>
         float CurrentLength = 0.0f;
 
-        ///Length - CurrentLength, 0 = fully extended
+        /// <summary>
+        /// Length - CurrentLength, 0 = fully extended
+        /// </summary>
         float Compression = 0.0f;
 
-        ///Normal force from the suspension (N)
+        /// <summary>
+        /// Normal force from the suspension (N)
+        /// </summary>
         float WheelLoad = 0.0f;
         btVector3 SuspensionForce = btVector3(0, 0, 0);
 
 
         // === Contact frame ===
 
-        ///Steered, projected onto contact plane
+        /// <summary>
+        /// Steered, projected onto contact plane
+        /// </summary>
         btVector3 Forward = btVector3(0, 0, 1);
         btVector3 Right = btVector3(1, 0, 0);
 
 
         // === Slip ===
 
-        ///Contact patch velocity along Forward (m/s)
+        /// <summary>
+        /// Contact patch velocity along Forward (m/s)
+        /// </summary>
         float LongVelocity = 0.0f;
 
-        ///Contact patch velocity along Right (m/s)
+        /// <summary>
+        /// Contact patch velocity along Right (m/s)
+        /// </summary>
         float LatVelocity = 0.0f;
         float SlipRatio = 0.0f;
         
-        ///In radians
+        /// <summary>
+        /// In radians
+        /// </summary>
         float SlipAngle = 0.0f;
 
 
@@ -63,13 +82,19 @@ namespace Vehicle
 
         // === Rotation ===
 
-        ///rad/s, positive = rolling forward
+        /// <summary>
+        /// rad/s, positive = rolling forward
+        /// </summary>
         float AngularVelocity = 0.0f; 
 
-        ///Accumulated for rendering (radians)
+        /// <summary>
+        /// Accumulated for rendering (radians)
+        /// </summary>
         float SpinAngle = 0.0f;
 
-        ///Radians, positive = right
+        /// <summary>
+        /// Radians, positive = right
+        /// </summary>
         float SteerAngle = 0.0f;
 
 
@@ -86,29 +111,41 @@ namespace Vehicle
     {
         // === Motion ===
 
-        ///Signed forward speed (m/s)
+        /// <summary>
+        /// Signed forward speed (m/s)
+        /// </summary>
         float Speed = 0.0f;
 
-        ///Speed in km/h
+        /// <summary>
+        /// Speed in km/h
+        /// </summary>
         float SpeedKmh = 0.0f;       
 
         // === Powertrain ===
         float EngineRPM = 850.0f;
         float EngineTorque = 0.0f;
 
-        ///-1 reverse, 0 neutral, 1..N forward
+        /// <summary>
+        /// -1 reverse, 0 neutral, 1..N forward
+        /// </summary>
         int CurrentGear = 1;
 
-        ///Current gear ratio * final drive
+        /// <summary>
+        /// Current gear ratio * final drive
+        /// </summary>
         float GearRatio = 0.0f;
 
+        /// <summary>
         /// 0 = fully slipping, 1 = fully locked
+        /// </summary>
         float ClutchLock = 1.0f;
         bool IsShifting = false;
         float ShiftTimer = 0.0f;
         int PendingGear = 1;
 
-        ///Mean of the driven wheels (rad/s)
+        /// <summary>
+        /// Mean of the driven wheels (rad/s)
+        /// </summary>
         float DrivenWheelAngularVelocity = 0.0f;
 
         // === Driver commands, raw ===
@@ -119,7 +156,9 @@ namespace Vehicle
         float Throttle = 0.0f;
         float Brake = 0.0f;
 
-        ///-1 left  +1 right
+        /// <summary>
+        /// -1 left  +1 right
+        /// </summary>
         float Steering = 0.0f;
         float Handbrake = 0.0f;
 

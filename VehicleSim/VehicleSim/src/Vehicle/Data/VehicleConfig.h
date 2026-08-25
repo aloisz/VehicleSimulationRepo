@@ -19,43 +19,67 @@ namespace Vehicle
 
     struct SuspensionConfig
     {
+        /// <summary>
         /// Max travel of the wheel below its anchor (m)
+        /// </summary>
         float Length = 0.42f;
 
+        /// <summary>
         /// N/m If <= 0, derived from mass and RestLength
+        /// </summary>
         float SpringStrength = 0.0f;
 
+        /// <summary>
         /// N per (m/s)
+        /// </summary>
         float DamperStrength = 4200.0f;
 
+        /// <summary>
         /// Clamp on the suspension force (N)
+        /// </summary>
         float MaxForce = 60000.0f;
 
+        /// <summary>
         /// Target suspension length at rest(m)
+        /// </summary>
         float RestLength = 0.22f;
     };
 
     struct TireConfig
     {
+        /// <summary>
         /// Slip ratio at peak longitudinal grip
+        /// </summary>
         float PeakSlipRatio = 0.12f;
 
+        /// <summary>
         /// Radians Slip angle at peak lateral grip
+        /// </summary>
         float PeakSlipAngle = 0.14f;
 
+        /// <summary>
         /// Longitudinal grip multiplier
+        /// </summary>
         float LongGrip = 1.0f;
 
+        /// <summary>
         /// Lateral grip multiplier
+        /// </summary>
         float LatGrip = 1.05f;
 
+        /// <summary>
         /// Base multiplier
+        /// </summary>
         float FrictionCoefficient = 1.15f;
 
+        /// <summary>
         /// How much mu drops as load rises above nominal
+        /// </summary>
         float LoadSensitivity = 0.25f;
 
+        /// <summary>
         /// Fraction of wheel load resisting rotation
+        /// </summary>
         float RollingResistance = 0.015f;
     };
 
@@ -67,20 +91,29 @@ namespace Vehicle
         float Radius = 0.34f;
         float Width = 0.24f;
 
+        /// <summary>
         /// Rotating mass, used for the wheels spin inertia
+        /// </summary>
         float Mass = 22.0f;
 
+        /// <summary>
         /// 0 = front, used for anti-roll pairing and brake bias
+        /// </summary>
         int Axle = 0;         
 
-        ///Overwritten at load time from the differential type
+        /// <summary>
+        /// Overwritten at load time from the differential type
+        /// </summary>
         bool IsDriven = false;    
         bool IsSteerable = false;
 
         SuspensionConfig Suspension;
         TireConfig Tire;
 
-        /// Spin inertia of the wheel, modelled as a solid disc.
+        /// <summary>
+        /// Spin inertia of the wheel, modelled as a solid disc
+        /// </summary>
+        /// <returns></returns>
         float GetSpinInertia() const { return 0.5f * Mass * Radius * Radius; }
     };
 
@@ -90,13 +123,19 @@ namespace Vehicle
         float MaxRPM = 7000.0f;
         float PeakTorqueRPM = 4200.0f;
 
+        /// <summary>
         /// Nm at the peak of the curve
+        /// </summary>
         float MaxTorque = 380.0f;
 
-        ///kg*m^2, govern free rev rate
+        /// <summary>
+        /// kg*m^2, govern free rev rate
+        /// </summary>
         float Inertia = 0.35f;          
 
+        /// <summary>
         /// Nm of drag at max RPM with a closed throttle
+        /// </summary>
         float EngineBrakeTorque = 45.0f;  
     };
 
@@ -107,12 +146,16 @@ namespace Vehicle
         float ReverseRatio = 3.2f;
         float Efficiency = 0.92f;
 
-        ///Seconds of torque cut during a shift
+        /// <summary>
+        /// Seconds of torque cut during a shift
+        /// </summary>
         float ShiftTime = 0.25f;
         float UpshiftRPM = 6300.0f;
         float DownshiftRPM = 2600.0f;
 
-        ///RPM above which the clutch is fully locked
+        /// <summary>
+        /// RPM above which the clutch is fully locked
+        /// </summary>
         float ClutchEngageRPM = 1400.0f; 
     };
 
@@ -120,7 +163,9 @@ namespace Vehicle
     {
         EDrivetrainType Type = EDrivetrainType::RWD;
 
-        ///AWD only: share of torque sent to axle 0
+        /// <summary>
+        /// AWD only: share of torque sent to axle 0
+        /// </summary>
         float FrontBias = 0.5f;
     };
 
@@ -131,7 +176,9 @@ namespace Vehicle
         float FrontalArea = 2.2f;
         float DownforceCoefficient = 0.9f;
 
+        /// <summary>
         /// Design frame
+        /// </summary>
         btVector3 CenterOfPressureOffset = btVector3(0.0f, 0.2f, -0.4f); 
     };
 
@@ -139,25 +186,37 @@ namespace Vehicle
     {
         float MaxSteerAngle = 33.0f * MathUtils::RADIAN;
 
-        ///Steer reduction at high speed
+        /// <summary>
+        /// Steer reduction at high speed
+        /// </summary>
         float SpeedSensitivity = 0.6f;
 
-        ///Radians per second of input travel
+        /// <summary>
+        /// Radians per second of input travel
+        /// </summary>
         float SteerRate = 180.0f * MathUtils::RADIAN;
 
-        ///Self centering rate
+        /// <summary>
+        /// Self centering rate
+        /// </summary>
         float ReturnRate = 300.0f * MathUtils::RADIAN;  
     };
 
     struct BrakeConfig
     {
+        /// <summary>
         /// Nm across the whole car
+        /// </summary>
         float MaxBrakeTorque = 3000.0f;
 
-        ///Share of brake torque on axle 0
+        /// <summary>
+        /// Share of brake torque on axle 0
+        /// </summary>
         float FrontBias = 0.62f;
 
-        ///Nm rear axle only.
+        /// <summary>
+        /// Nm rear axle only.
+        /// </summary>
         float HandbrakeTorque = 4000.0f;
         bool AbsEnabled = true;
         float AbsSlipThreshold = 0.14f;
@@ -167,7 +226,9 @@ namespace Vehicle
 
     struct AntiRollConfig
     {
-        ///N per meter of travel difference between sides
+        /// <summary>
+        /// N per meter of travel difference between sides
+        /// </summary>
         float FrontStiffness = 6000.0f;
         float RearStiffness = 4500.0f;
     };

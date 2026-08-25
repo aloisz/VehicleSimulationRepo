@@ -1,14 +1,35 @@
 #include "VehicleInputModule.h"
 
-bool Vehicle::VehicleInputModule::Initialize(VehicleContext& context)
+#include "../../Core/Input.h"
+#include "../../Core/Log.h"
+#include "../../Core/MathUtils.h"
+
+#include <GL/freeglut.h>
+
+using namespace MathUtils;
+
+namespace Vehicle 
 {
-    return false;
+	bool VehicleInputModule::Initialize(VehicleContext& context)
+	{
+		if (!context.IsValid())
+		{
+			Log::Error("VehicleInputModule: invalid context", Log::Category::Vehicle);
+			return false;
+		}
+
+		_initialized = true;
+		return true;
+	}
+
+	void VehicleInputModule::Update(float dt, VehicleContext& context)
+	{
+	}
+
+	void VehicleInputModule::Dispose()
+	{
+		_initialized = false;
+	}
 }
 
-void Vehicle::VehicleInputModule::Update(float dt, VehicleContext& context)
-{
-}
 
-void Vehicle::VehicleInputModule::Dispose()
-{
-}

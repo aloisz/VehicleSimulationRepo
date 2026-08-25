@@ -108,10 +108,11 @@ namespace
     {
         Vehicle::VehicleConfig config = Vehicle::VehicleConfig::MakeDefault();
 
-        // Optional: pass a config path as the first argument.
         std::string explicitPath;
-        if (argc > 1 && argv[1] && argv[1][0] != '-')
+        if (argc > 1 && argv[1] && argv[1][0] != '-') 
+        {
             explicitPath = argv[1];
+        }
 
         std::string error;
 
@@ -121,7 +122,7 @@ namespace
                 return config;
 
             Log::Error(error, Log::Category::Config);
-            Log::Warning("Falling back to the built-in default config", Log::Category::Config);
+            Log::Warning("Falling back to the built in default config", Log::Category::Config);
             return Vehicle::VehicleConfig::MakeDefault();
         }
 
@@ -132,7 +133,7 @@ namespace
                 return candidate;
         }
 
-        Log::Warning("No vehicle.json found on any default path, using the built-in config",
+        Log::Warning("No vehicle.json found on any default path, using the built in config",
             Log::Category::Config);
         return config;
     }
@@ -174,6 +175,7 @@ int main(int argc, char** argv)
     glutMainLoop();
 
     g_app.Cleanup();
+    g_vehicle = nullptr;
 
     return 0;
 }

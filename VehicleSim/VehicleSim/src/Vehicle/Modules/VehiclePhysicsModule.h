@@ -34,5 +34,20 @@ namespace Vehicle
 
         void ApplyWheelForces(VehicleContext& context);
         void ApplyAntiRoll(VehicleContext& context);
+
+        /// <summary>
+        /// Wheel index pairs sharing an axle
+        /// </summary>
+        struct AxlePair
+        {
+            size_t Left = 0;
+            size_t Right = 0;
+            int Axle = 0;
+            bool Valid = false;
+        };
+
+        std::vector<AxlePair> _axlePairs;
+        std::vector<size_t> _steerableWheels;
+        int _maxAxle = 0;
     };
 }
