@@ -476,6 +476,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\main.cpp" />
     <ClInclude Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Core\Actor.h" />
     <ClInclude Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Core\Application.h" />
+    <ClInclude Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Core\Color.h" />
     <ClInclude Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Core\Input.h" />
     <ClInclude Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Core\Log.h" />
     <ClInclude Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Core\MathUtils.h" />

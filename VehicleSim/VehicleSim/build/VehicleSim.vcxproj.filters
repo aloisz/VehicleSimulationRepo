@@ -58,6 +58,9 @@
     <ClInclude Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Core\Application.h">
       <Filter>Core</Filter>
     </ClInclude>
+    <ClInclude Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Core\Color.h">
+      <Filter>Core</Filter>
+    </ClInclude>
     <ClInclude Include="D:\C++\VehicleSimulationRepo\VehicleSim\VehicleSim\src\Core\Input.h">
       <Filter>Core</Filter>
     </ClInclude>

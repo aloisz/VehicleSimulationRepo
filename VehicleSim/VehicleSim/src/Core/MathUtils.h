@@ -13,6 +13,11 @@ namespace MathUtils
     constexpr float RPM2RADS = 2.0f * PI / 60.0f;
     constexpr float RADS2RPM = 60.0f / (2.0f * PI);
 
+    constexpr float MSTOKMH = 3.6f;
+    constexpr float KMHTOMS = 0.277778f;
+
+    constexpr float EPSILON = 1e-6f;
+
     inline float Clamp(float value, float low, float high)
     {
         return value < low ? low : (value > high ? high : value);

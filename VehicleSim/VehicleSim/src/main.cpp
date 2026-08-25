@@ -69,6 +69,7 @@ namespace
         SetupProjection();
 
         g_app.Render();
+        DebugDraw::DrawAndFlush();
 
         glutSwapBuffers();
     }

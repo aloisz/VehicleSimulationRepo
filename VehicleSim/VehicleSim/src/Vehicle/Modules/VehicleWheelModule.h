@@ -28,5 +28,8 @@ namespace Vehicle
         void UpdateSlip(VehicleContext& context, size_t index);
         void UpdateTireForces(VehicleContext& context, size_t index);
         void IntegrateWheelSpin(float dt, VehicleContext& context, size_t index);
+
+        /// A surface steeper than this counts as a wall.
+        static constexpr float MIN_GROUND_DOT = 0.15f;
     };
 }

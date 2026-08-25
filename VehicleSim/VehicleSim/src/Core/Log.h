@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <string>
+#include "Color.h"
 
 /// <summary>
 /// Log helper
@@ -26,6 +27,7 @@ namespace Log
 
             case Category::Vehicle: 
                 return "Vehicle";
+
             case Category::Config:  
                 return "Config";
 
@@ -37,18 +39,30 @@ namespace Log
         }
     }
 
+    template <typename... Args>
+    std::string Format(Args&&... args)
+    {
+        std::ostringstream ss;
+        (ss << ... << std::forward<Args>(args));
+        return ss.str();
+    }
+
     inline void Info(const std::string& msg, Category c = Category::General)
     {
-        std::cout << "[INFO ][" << ToString(c) << "] " << msg << std::endl;
+        std::cout << Color::Gray << "[INFO]"
+            << Color::Cyan << "[" << ToString(c) << "] "
+            << Color::White << msg << Color::Reset << std::endl;
     }
 
     inline void Warning(const std::string& msg, Category c = Category::General)
     {
-        std::cout << "[WARNING ][" << ToString(c) << "] " << msg << std::endl;
+        std::cout << Color::Yellow << "[WARNING][" << ToString(c) << "] "
+            << msg << Color::Reset << std::endl;
     }
 
     inline void Error(const std::string& msg, Category c = Category::General)
     {
-        std::cerr << "[ERROR][" << ToString(c) << "] " << msg << std::endl;
+        std::cerr << Color::Red << "[ERROR][" << ToString(c) << "] "
+            << msg << Color::Reset << std::endl;
     }
 }

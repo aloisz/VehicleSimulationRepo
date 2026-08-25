@@ -80,10 +80,19 @@ namespace Vehicle
 
 	void VehiclePhysicsModule::UpdateControls(float dt, VehicleContext& context)
 	{
+        if (!_initialized) return;
+
+        ApplySteering(dt, context);
+        ApplyBrakes(context);
+        ApplyTractionControl(context);
 	}
 
 	void VehiclePhysicsModule::Update(float dt, VehicleContext& context)
 	{
+        if (!_initialized) return;
+
+        ApplyWheelForces(context);
+        ApplyAntiRoll(context);
 	}
 
 	void VehiclePhysicsModule::Dispose()
@@ -107,6 +116,25 @@ namespace Vehicle
 
 	void VehiclePhysicsModule::ApplyWheelForces(VehicleContext& context)
 	{
+        VehicleRuntime& rt = *context.Runtime;
+        const btVector3 com = context.GetCenterOfMass();
+
+        for (WheelRuntime& wr : rt.Wheels)
+        {
+            if (!wr.Grounded) continue;
+
+            // Suspension force acts at the anchor, along the suspension axis.
+            if (wr.SuspensionForce.length2() > MathUtils::EPSILON && IsFinite(wr.SuspensionForce))
+                context.Body->applyForce(wr.SuspensionForce, wr.AnchorWorld - com);
+
+            if (wr.TireForce.length2() > MathUtils::EPSILON && IsFinite(wr.TireForce))
+            {
+                const btVector3 application =
+                    wr.HitPoint + wr.HitNormal * (wr.WheelCenter - wr.HitPoint).length()
+                    * TIRE_FORCE_HEIGHT;
+                context.Body->applyForce(wr.TireForce, application - com);
+            }
+        }
 	}
 
 	void VehiclePhysicsModule::ApplyAntiRoll(VehicleContext& context)

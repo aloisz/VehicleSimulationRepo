@@ -49,5 +49,9 @@ namespace Vehicle
         std::vector<AxlePair> _axlePairs;
         std::vector<size_t> _steerableWheels;
         int _maxAxle = 0;
+
+        /// Fraction of the way from the contact patch to the wheel centre at
+        /// which tire forces are applied 0 = contact patch (load transfer), 1 = wheel centre (no roll moment)
+        static constexpr float TIRE_FORCE_HEIGHT = 0.5f;
     };
 }

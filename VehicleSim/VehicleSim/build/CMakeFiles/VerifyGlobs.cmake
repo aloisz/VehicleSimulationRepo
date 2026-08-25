@@ -48,6 +48,7 @@ file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "D:/C++/VehicleSimulationRepo/
 set(OLD_GLOB
   "D:/C++/VehicleSimulationRepo/VehicleSim/VehicleSim/src/Core/Actor.h"
   "D:/C++/VehicleSimulationRepo/VehicleSim/VehicleSim/src/Core/Application.h"
+  "D:/C++/VehicleSimulationRepo/VehicleSim/VehicleSim/src/Core/Color.h"
   "D:/C++/VehicleSimulationRepo/VehicleSim/VehicleSim/src/Core/Input.h"
   "D:/C++/VehicleSimulationRepo/VehicleSim/VehicleSim/src/Core/Log.h"
   "D:/C++/VehicleSimulationRepo/VehicleSim/VehicleSim/src/Core/MathUtils.h"
