@@ -9,6 +9,7 @@
 #include "Core/Input.h"
 #include "Core/Log.h"
 #include "Core/MathUtils.h"
+#include "Objects/Ground.h"
 #include "Vehicle/VehicleCore.h"
 #include "Vehicle/Data/VehicleConfigLoader.h"
 #include "Render/DebugDraw.h"
@@ -151,6 +152,9 @@ int main(int argc, char** argv)
     InitGL();
 
     g_app.Init(1.0f / 120.0f);
+
+    Ground* ground = new Ground(g_app.GetPhysics().GetWorld());
+    g_app.AddActor(ground);
 
     const Vehicle::VehicleConfig config = LoadVehicleConfig(argc, argv);
 
