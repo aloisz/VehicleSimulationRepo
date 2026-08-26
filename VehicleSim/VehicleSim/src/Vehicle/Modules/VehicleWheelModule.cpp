@@ -103,12 +103,12 @@ namespace Vehicle
 		wr.Compression = wc.Suspension.Length - wr.CurrentLength;
 		wr.WheelCenter = rayFrom - up * wr.CurrentLength;
 
-		Log::Info("Length: '" + std::to_string(wr.CurrentLength) + "' ", Log::Category::Vehicle);
+		/*Log::Info("Length: '" + std::to_string(wr.CurrentLength) + "' ", Log::Category::Vehicle);
 		Log::Info("Compression: '" + std::to_string(wr.Compression) + "' ", Log::Category::Vehicle);
 		Log::Info("WheelCenter: '" 
 			+ std::to_string(wr.WheelCenter.getX()) + "," 
 			+ std::to_string(wr.WheelCenter.getY()) + "," 
-			+ std::to_string(wr.WheelCenter.getZ()) + "' \n", Log::Category::Vehicle);
+			+ std::to_string(wr.WheelCenter.getZ()) + "' \n", Log::Category::Vehicle);*/
 	}
 
 	void VehicleWheelModule::UpdateSuspension(VehicleContext& context, size_t index)

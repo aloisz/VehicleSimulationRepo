@@ -15,5 +15,12 @@ namespace Vehicle
 		void Dispose() override;
 
 		const char* GetName() const override { return "VehicleInputModule"; }
+
+	private:
+		void UpdateInput(float dt, VehicleContext& context);
+
+		float _throttle = 0.0f;
+		float _brake = 0.0f;
+		float _steer = 0.0f;
 	};
 }

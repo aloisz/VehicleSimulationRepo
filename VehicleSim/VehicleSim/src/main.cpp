@@ -16,6 +16,7 @@
 
 using namespace MathUtils;
 
+
 namespace
 {
     Application& g_app = Application::GetInstance();
@@ -36,6 +37,7 @@ namespace
         "../../config/vehicle.json"
     };
 
+    #pragma region Camera
     void SetupProjection()
     {
         const float aspect = g_windowHeight > 0
@@ -53,7 +55,9 @@ namespace
             g_cameraTarget.getX(), g_cameraTarget.getY(), g_cameraTarget.getZ(),
             0.0, 1.0, 0.0);
     }
+    #pragma endregion Camera
 
+    #pragma region Render
     void Display()
     {
         const int nowMs = glutGet(GLUT_ELAPSED_TIME);
@@ -64,6 +68,7 @@ namespace
         if (dt <= 0.0f || dt > 0.25f) dt = 1.0f / 60.0f;
 
         g_app.Update(dt);
+        Input::Input::Get().ClearFrame();
 
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         SetupProjection();
@@ -105,13 +110,15 @@ namespace
 
         glClearColor(0.10f, 0.11f, 0.14f, 1.0f);
     }
+    #pragma endregion Render
 
+    #pragma region Loading Files
     Vehicle::VehicleConfig LoadVehicleConfig(int argc, char** argv)
     {
         Vehicle::VehicleConfig config = Vehicle::VehicleConfig::MakeDefault();
 
         std::string explicitPath;
-        if (argc > 1 && argv[1] && argv[1][0] != '-') 
+        if (argc > 1 && argv[1] && argv[1][0] != '-')
         {
             explicitPath = argv[1];
         }
@@ -139,6 +146,43 @@ namespace
             Log::Category::Config);
         return config;
     }
+    #pragma endregion Loading Files
+
+    #pragma region Input
+    void KeyDown(unsigned char key, int, int) 
+    {
+        if (key == 27) // escape key
+        {
+            g_app.Cleanup();
+            glutLeaveMainLoop();
+            return;
+        }
+
+        Input::Input::Get().OnKeyDown(key);
+    }
+
+    void KeyUp(unsigned char key, int, int) 
+    {
+        Input::Input::Get().OnKeyUp(key);
+    }
+
+    void SpecialDown(int key, int, int)
+    {
+        if (key == GLUT_KEY_F1)
+        {
+            DebugDraw::SetEnabled(!DebugDraw::IsEnabled());
+            return;
+        }
+
+        Input::Input::Get().OnSpecialDown(key);
+    }
+
+    void SpecialUp(int key, int, int)
+    {
+        Input::Input::Get().OnSpecialUp(key);
+    }
+    #pragma endregion Input
+
 }
 
 int main(int argc, char** argv)
@@ -168,12 +212,15 @@ int main(int argc, char** argv)
         Log::Error("Vehicle failed to initialize", Log::Category::Vehicle);
     }
         
-
     glutIgnoreKeyRepeat(1);
 
     glutDisplayFunc(Display);
     glutIdleFunc(Idle);
     glutReshapeFunc(Reshape);
+    glutKeyboardFunc(KeyDown);
+    glutKeyboardUpFunc(KeyUp);
+    glutSpecialFunc(SpecialDown);
+    glutSpecialUpFunc(SpecialUp);
 
     g_lastElapsedMs = glutGet(GLUT_ELAPSED_TIME);
 
