@@ -31,7 +31,8 @@ namespace
     btVector3 g_cameraTarget(0.0f, 0.0f, 0.0f);
     bool g_cameraInitialized = false;
 
-    const char* DEFAULT_CONFIG_PATHS[] = {
+    const char* DEFAULT_CONFIG_PATHS[] = 
+    {
         "config/vehicle.json",
         "../config/vehicle.json",
         "../../config/vehicle.json"
@@ -115,7 +116,8 @@ namespace
     #pragma region Loading Files
     Vehicle::VehicleConfig LoadVehicleConfig(int argc, char** argv)
     {
-        Vehicle::VehicleConfig config = Vehicle::VehicleConfig::MakeDefault();
+        // not using MakeDefault() because it double the value in the config ?
+        Vehicle::VehicleConfig config; //= Vehicle::VehicleConfig::MakeDefault();
 
         std::string explicitPath;
         if (argc > 1 && argv[1] && argv[1][0] != '-')
@@ -125,21 +127,12 @@ namespace
 
         std::string error;
 
-        if (!explicitPath.empty())
-        {
-            if (Vehicle::VehicleConfigLoader::LoadFromFile(explicitPath, config, error))
-                return config;
-
-            Log::Error(error, Log::Category::Config);
-            Log::Warning("Falling back to the built in default config", Log::Category::Config);
-            return Vehicle::VehicleConfig::MakeDefault();
-        }
-
         for (const char* path : DEFAULT_CONFIG_PATHS)
         {
-            Vehicle::VehicleConfig candidate = Vehicle::VehicleConfig::MakeDefault();
-            if (Vehicle::VehicleConfigLoader::LoadFromFile(path, candidate, error))
-                return candidate;
+            if (Vehicle::VehicleConfigLoader::LoadFromFile(path, config, error))
+            {
+                return config;
+            }
         }
 
         Log::Warning("No vehicle.json found on any default path, using the built in config",
@@ -153,6 +146,21 @@ namespace
     {
         if (key == 27) // escape key
         {
+            // Save changes before quitting the application
+            /*if (g_vehicle)
+            {
+                std::string saveError;
+                const Vehicle::VehicleConfig& updatedConfig = g_vehicle->GetConfig();
+                if (Vehicle::VehicleConfigLoader::SaveToFile("../config/vehicle.json", updatedConfig, saveError))
+                {
+                    Log::Info("Vehicle configuration saved successfully.", Log::Category::Config);
+                }
+                else
+                {
+                    Log::Error("Failed to save config: " + saveError, Log::Category::Config);
+                }
+            }*/
+
             g_app.Cleanup();
             glutLeaveMainLoop();
             return;

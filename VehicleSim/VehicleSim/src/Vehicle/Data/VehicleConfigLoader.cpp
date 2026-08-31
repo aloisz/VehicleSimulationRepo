@@ -12,8 +12,6 @@ using json = nlohmann::json;
 
 namespace
 {
-    // --- Optional readers: leave the destination untouched when the key is absent.
-
     void ReadFloat(const json& j, const char* key, float& dst)
     {
         if (j.contains(key) && j[key].is_number())
@@ -44,6 +42,29 @@ namespace
             dst = j[key].get<std::string>();
     }
 
+    void ReadChar(const json& j, const char* key, char& dst)
+    {
+        if (!j.contains(key)) return;
+
+        const json& v = j[key];
+
+        if (v.is_string())
+        {
+            const std::string& str = v.get<std::string>();
+            if (!str.empty())
+                dst = str[0];
+        }
+        else if (v.is_number_integer())
+        {
+            const int code = v.get<int>();
+            if (code > 0 && code < 128)
+                dst = static_cast<char>(code);
+            else
+                Log::Warning(std::string("Key code out of range for '") + key + "'",
+                    Log::Category::Config);
+        }
+    }
+
     void ReadVec3(const json& j, const char* key, btVector3& dst)
     {
         if (!j.contains(key)) return;
@@ -68,7 +89,7 @@ namespace
         return json::array({ v.getX(), v.getY(), v.getZ() });
     }
 
-    // --- Section readers ---------------------------------------------------
+    // === Section readers ===
 
     void ReadSuspension(const json& j, Vehicle::SuspensionConfig& s)
     {
@@ -82,7 +103,7 @@ namespace
     void ReadTire(const json& j, Vehicle::TireConfig& t)
     {
         ReadFloat(j, "peakSlipRatio", t.PeakSlipRatio);
-        ReadFloat(j, "peakSlipAngle", t.PeakSlipAngle);          // radians
+        ReadFloat(j, "peakSlipAngle", t.PeakSlipAngle); // radians
         ReadDegreesAsRadians(j, "peakSlipAngleDeg", t.PeakSlipAngle);
         ReadFloat(j, "longGrip", t.LongGrip);
         ReadFloat(j, "latGrip", t.LatGrip);
@@ -163,6 +184,17 @@ namespace
         ReadDegreesAsRadians(j, "returnRateDegPerSec", s.ReturnRate);
     }
 
+    void ReadInput(const json& j, Vehicle::InputConfig& i)
+    {
+        ReadChar(j, "throttleInput", i.throttleInput);
+        ReadChar(j, "brakeInput", i.brakeInput);
+        ReadChar(j, "steerLeftInput", i.steerLeftInput);
+        ReadChar(j, "steerRightInput", i.steerRightInput);
+        ReadChar(j, "gearShiftUpInput", i.gearShiftUpInput);
+        ReadChar(j, "gearShiftDownInput", i.gearShiftDownInput);
+        ReadChar(j, "changeGearboxType", i.changeGearboxType);
+    }
+
     void ReadBrakes(const json& j, Vehicle::BrakeConfig& b)
     {
         ReadFloat(j, "maxBrakeTorque", b.MaxBrakeTorque);
@@ -211,13 +243,45 @@ namespace Vehicle
             ReadVec3(root, "bodySize", cfg.BodySize);
             ReadVec3(root, "centerOfMassOffset", cfg.CenterOfMassOffset);
 
-            if (root.contains("engine"))         ReadEngine(root["engine"], cfg.Engine);
-            if (root.contains("gearbox"))        ReadGearbox(root["gearbox"], cfg.Gearbox);
-            if (root.contains("differential"))   ReadDifferential(root["differential"], cfg.Differential);
-            if (root.contains("aerodynamics"))   ReadAero(root["aerodynamics"], cfg.Aero);
-            if (root.contains("steering"))       ReadSteering(root["steering"], cfg.Steering);
-            if (root.contains("brakes"))         ReadBrakes(root["brakes"], cfg.Brakes);
-            if (root.contains("antiRoll"))       ReadAntiRoll(root["antiRoll"], cfg.AntiRoll);
+            if (root.contains("engine"))
+            {
+                ReadEngine(root["engine"], cfg.Engine);
+            }
+
+            if (root.contains("gearbox")) 
+            {
+                ReadGearbox(root["gearbox"], cfg.Gearbox);
+            }
+
+            if (root.contains("differential")) 
+            {
+                ReadDifferential(root["differential"], cfg.Differential);
+            }
+
+            if (root.contains("aerodynamics")) 
+            {
+                ReadAero(root["aerodynamics"], cfg.Aero);
+            }
+
+            if (root.contains("steering")) 
+            {
+                ReadSteering(root["steering"], cfg.Steering);
+            }
+
+            if (root.contains("input"))
+            {
+                ReadInput(root["input"], cfg.Input);
+            }
+
+            if (root.contains("brakes")) 
+            {
+                ReadBrakes(root["brakes"], cfg.Brakes);
+            }
+
+            if (root.contains("antiRoll"))
+            {
+                ReadAntiRoll(root["antiRoll"], cfg.AntiRoll);
+            }
 
             if (root.contains("wheels") && root["wheels"].is_array())
             {
@@ -314,6 +378,18 @@ namespace Vehicle
             { "speedSensitivity", cfg.Steering.SpeedSensitivity },
             { "steerRateDegPerSec", cfg.Steering.SteerRate * MathUtils::RAD2DEG },
             { "returnRateDegPerSec", cfg.Steering.ReturnRate * MathUtils::RAD2DEG }
+        };
+
+        auto KeyToJson = [](char c) { return std::string(1, c); };
+
+        root["input"] = {
+            { "throttleInput",KeyToJson(cfg.Input.throttleInput) },
+            { "brakeInput", KeyToJson(cfg.Input.brakeInput) },
+            { "steerLeftInput", KeyToJson(cfg.Input.steerLeftInput) },
+            { "steerRightInput", KeyToJson(cfg.Input.steerRightInput) },
+            { "gearShiftUpInput", KeyToJson(cfg.Input.gearShiftUpInput) },
+            { "gearShiftDownInput", KeyToJson(cfg.Input.gearShiftDownInput) },
+            { "changeGearboxType", KeyToJson(cfg.Input.changeGearboxType) }
         };
 
         root["brakes"] = {

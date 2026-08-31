@@ -40,18 +40,18 @@ namespace Vehicle
 
 		VehicleRuntime& runtime = *context.Runtime;
 		const SteeringConfig& steeringCfg = context.Config->Steering;
+		const InputConfig& inputCfg = context.Config->Input;
 
-		// TODO : Need to store the input keys in VehicleConfig
-		const bool throttleHeld = input.IsKeyHeld('w') || input.IsSpecialHeld(GLUT_KEY_UP);
-		const bool brakeHeld = input.IsKeyHeld('s') || input.IsSpecialHeld(GLUT_KEY_DOWN);
-		const bool leftHeld = input.IsKeyHeld('a') || input.IsSpecialHeld(GLUT_KEY_LEFT);
-		const bool rightHeld = input.IsKeyHeld('d') || input.IsSpecialHeld(GLUT_KEY_RIGHT);
+		const bool throttleHeld = input.IsKeyHeld(inputCfg.throttleInput) || input.IsSpecialHeld(GLUT_KEY_UP);
+		const bool brakeHeld = input.IsKeyHeld(inputCfg.brakeInput) || input.IsSpecialHeld(GLUT_KEY_DOWN);
+		const bool leftHeld = input.IsKeyHeld(inputCfg.steerLeftInput) || input.IsSpecialHeld(GLUT_KEY_LEFT);
+		const bool rightHeld = input.IsKeyHeld(inputCfg.steerRightInput) || input.IsSpecialHeld(GLUT_KEY_RIGHT);
 
-		Log::Info("throttleHeld: " + std::string(throttleHeld ? "true" : "false"), Log::Category::Vehicle);
+		/*Log::Info("throttleHeld: " + std::string(throttleHeld ? "true" : "false"), Log::Category::Vehicle);
 		Log::Info("brakeHeld: " + std::string(brakeHeld ? "true" : "false"), Log::Category::Vehicle);
 		Log::Info("leftHeld: " + std::string(leftHeld ? "true" : "false"), Log::Category::Vehicle);
 		Log::Info("rightHeld: " + std::string(rightHeld ? "true" : "false"), Log::Category::Vehicle);
-		Log::Info("\n", Log::Category::Vehicle);
+		Log::Info("\n", Log::Category::Vehicle);*/
 	}
 }
 

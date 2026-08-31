@@ -202,6 +202,19 @@ namespace Vehicle
         float ReturnRate = 300.0f * MathUtils::RADIAN;  
     };
 
+    struct InputConfig 
+    {
+        char throttleInput = 'w'; 
+        char brakeInput = 's';
+        char steerLeftInput = 'a';
+        char steerRightInput = 'd';
+
+        char gearShiftUpInput = 'e';
+        char gearShiftDownInput = 'q';
+
+        char changeGearboxType = 'm';
+    };
+
     struct BrakeConfig
     {
         /// <summary>
@@ -248,6 +261,7 @@ namespace Vehicle
         DifferentialConfig Differential;
         AerodynamicsConfig Aero;
         SteeringConfig Steering;
+        InputConfig Input;
         BrakeConfig Brakes;
         AntiRollConfig AntiRoll;
 

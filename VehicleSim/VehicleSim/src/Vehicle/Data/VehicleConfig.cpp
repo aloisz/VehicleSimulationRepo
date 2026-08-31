@@ -127,7 +127,6 @@ namespace Vehicle
 
             if (w.Suspension.DamperStrength <= 0.0f)
             {
-                // ~0.85 of critical damping for a quarter-car corner
                 const float cornerMass = Mass / static_cast<float>(Wheels.size());
                 w.Suspension.DamperStrength =
                     0.85f * 2.0f * std::sqrt(w.Suspension.SpringStrength * cornerMass);
@@ -186,7 +185,7 @@ namespace Vehicle
     VehicleConfig VehicleConfig::MakeDefault()
     {
         VehicleConfig cfg;
-        cfg.Name = "Default Sedan (built-in)";
+        cfg.Name = "Default Vehicle Simulation";
 
         const float halfTrack = 0.78f;
         const float wheelbaseHalf = 1.35f;
