@@ -153,6 +153,9 @@ namespace Vehicle
         float UpshiftRPM = 6300.0f;
         float DownshiftRPM = 2600.0f;
 
+        float AutoReverseThrottleThreshold = 0.3f;
+        float AutoReverseBrakeThreshold = 0.1f;
+
         /// <summary>
         /// RPM above which the clutch is fully locked
         /// </summary>

@@ -56,6 +56,40 @@ namespace
             g_cameraTarget.getX(), g_cameraTarget.getY(), g_cameraTarget.getZ(),
             0.0, 1.0, 0.0);
     }
+
+    void UpdateCamera(float dt)
+    {
+        if (!g_vehicle) return;
+
+        const btVector3 position = g_vehicle->GetPosition();
+
+        btVector3 forward = g_vehicle->GetForward();
+        forward.setY(0.0f);
+
+        if (forward.length2() < MathUtils::EPSILON) 
+        {
+            forward = btVector3(0.0f, 0.0f, 1.0f);
+        }
+
+        forward.normalize();
+
+        const btVector3 desiredPosition = position - forward * 9.5f + btVector3(0.0f, 3.6f, 0.0f);
+        const btVector3 desiredTarget = position + forward * 4.0f + btVector3(0.0f, 0.6f, 0.0f);
+
+        if (!g_cameraInitialized)
+        {
+            g_cameraPosition = desiredPosition;
+            g_cameraTarget = desiredTarget;
+            g_cameraInitialized = true;
+        }
+        else
+        {
+            // Exp smoothing
+            const float lag = 1.0f - std::exp(-8.0f * dt);
+            g_cameraPosition += (desiredPosition - g_cameraPosition) * lag;
+            g_cameraTarget += (desiredTarget - g_cameraTarget) * lag;
+        }
+    }
     #pragma endregion Camera
 
     #pragma region Render
@@ -65,11 +99,15 @@ namespace
         float dt = static_cast<float>(nowMs - g_lastElapsedMs) / 1000.0f;
         g_lastElapsedMs = nowMs;
 
-        // First frame, or a paused window => do not hand a garbage dt to the sim
-        if (dt <= 0.0f || dt > 0.25f) dt = 1.0f / 60.0f;
+        if (dt <= 0.0f || dt > 0.25f)
+        {
+            dt = 1.0f / 60.0f;
+        }
 
         g_app.Update(dt);
         Input::Input::Get().ClearFrame();
+
+        UpdateCamera(dt);
 
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         SetupProjection();
@@ -146,21 +184,6 @@ namespace
     {
         if (key == 27) // escape key
         {
-            // Save changes before quitting the application
-            /*if (g_vehicle)
-            {
-                std::string saveError;
-                const Vehicle::VehicleConfig& updatedConfig = g_vehicle->GetConfig();
-                if (Vehicle::VehicleConfigLoader::SaveToFile("../config/vehicle.json", updatedConfig, saveError))
-                {
-                    Log::Info("Vehicle configuration saved successfully.", Log::Category::Config);
-                }
-                else
-                {
-                    Log::Error("Failed to save config: " + saveError, Log::Category::Config);
-                }
-            }*/
-
             g_app.Cleanup();
             glutLeaveMainLoop();
             return;
@@ -182,6 +205,24 @@ namespace
             return;
         }
 
+        if (key == GLUT_KEY_F6) 
+        {
+            if (g_vehicle)
+            {
+                // Save before quitting the application
+                std::string saveError;
+                const Vehicle::VehicleConfig& updatedConfig = g_vehicle->GetConfig();
+                if (Vehicle::VehicleConfigLoader::SaveToFile("../config/vehicle.json", updatedConfig, saveError))
+                {
+                    Log::Info("Vehicle configuration saved successfully.", Log::Category::Config);
+                }
+                else
+                {
+                    Log::Error("Failed to save config: " + saveError, Log::Category::Config);
+                }
+            }
+        }
+
         Input::Input::Get().OnSpecialDown(key);
     }
 
@@ -190,7 +231,6 @@ namespace
         Input::Input::Get().OnSpecialUp(key);
     }
     #pragma endregion Input
-
 }
 
 int main(int argc, char** argv)

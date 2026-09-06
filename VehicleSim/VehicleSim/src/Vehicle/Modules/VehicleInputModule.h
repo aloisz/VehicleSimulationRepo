@@ -22,5 +22,10 @@ namespace Vehicle
 		float _throttle = 0.0f;
 		float _brake = 0.0f;
 		float _steer = 0.0f;
+
+		static constexpr float THROTTLE_RATE = 4.0f;
+		static constexpr float THROTTLE_RELEASE_RATE = 6.0f;
+		static constexpr float BRAKE_RATE = 6.0f;
+		static constexpr float BRAKE_RELEASE_RATE = 8.0f;
 	};
 }

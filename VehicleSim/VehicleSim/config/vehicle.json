@@ -21,6 +21,8 @@
     "shiftTime": 0.25,
     "upshiftRPM": 6300,
     "downshiftRPM": 2600,
+    "autoReverseThrottleThreshold": 0.3,
+    "autoReverseBrakeThreshold": 0.1,
     "clutchEngageRPM": 1400
   },
 

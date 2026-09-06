@@ -135,7 +135,7 @@ namespace Vehicle
 
 		float force = springForce - damperForce;
 
-		// The suspension can push but never pull.
+		// The suspension can push but never pull
 		force = Clamp(force, 0.0f, sc.MaxForce);
 
 		wr.WheelLoad = force;

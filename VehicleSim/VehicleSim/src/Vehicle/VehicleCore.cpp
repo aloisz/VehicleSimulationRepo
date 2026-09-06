@@ -76,6 +76,7 @@ namespace Vehicle
 
     void VehicleCore::Start()
     {
+
     }
 
 
@@ -114,9 +115,11 @@ namespace Vehicle
     #pragma region Rigidbody
     bool VehicleCore::CreateRigidBody()
     {
-        _boxShape = new btBoxShape(btVector3(_config.BodySize.getX() * 0.5f,
-            _config.BodySize.getY() * 0.5f,
-            _config.BodySize.getZ() * 0.5f));
+        _boxShape = 
+            new btBoxShape(btVector3(
+                _config.BodySize.getX() * 0.5f,
+                _config.BodySize.getY() * 0.5f,
+                _config.BodySize.getZ() * 0.5f));
 
         _compoundShape = new btCompoundShape();
 
@@ -150,8 +153,10 @@ namespace Vehicle
 
     void VehicleCore::DestroyRigidBody()
     {
-        if (_rigidBody && _world)
+        if (_rigidBody && _world) 
+        {
             _world->removeRigidBody(_rigidBody);
+        }
 
         delete _rigidBody;
         _rigidBody = nullptr;
@@ -168,6 +173,7 @@ namespace Vehicle
 
     void VehicleCore::Reset()
     {
+
     }
     #pragma endregion Rigidbody
 

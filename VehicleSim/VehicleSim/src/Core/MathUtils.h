@@ -32,15 +32,31 @@ namespace MathUtils
     /// <summary>
     /// Moves 'current' towards 'target' by at most 'maxDelta'
     /// </summary>
-    /// <param name="current"></param>
-    /// <param name="target"></param>
-    /// <param name="maxDelta"></param>
-    /// <returns></returns>
     inline float MoveTowards(float current, float target, float maxDelta)
     {
         const float diff = target - current;
         if (std::fabs(diff) <= maxDelta) return target;
         return current + Sign(diff) * maxDelta;
+    }
+
+    inline float Pacejka(float Slip, float B, float C, float D, float E)
+    {
+        float bx = B * Slip;
+        float term = bx - E * (bx - std::atan(bx));
+        return D * std::sin(C * std::atan(term));
+    }
+
+    inline float SlipCurve(float slip, float peak)
+    {
+        if (peak <= EPSILON) return 0.0f;
+
+        const float x = slip / peak;
+        const float ax = std::fabs(x);
+
+        if (ax <= 1.0f)
+            return x;
+        const float t = Clamp01((ax - 1.0f) / 2.0f);
+        return Sign(x) * Lerp(1.0f, 0.75f, t);
     }
 
     inline bool IsFinite(const btVector3& v)

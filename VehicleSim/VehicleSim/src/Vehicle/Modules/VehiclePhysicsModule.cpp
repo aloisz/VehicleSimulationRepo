@@ -112,6 +112,27 @@ namespace Vehicle
 
 	void VehiclePhysicsModule::ApplyTractionControl(VehicleContext& context)
 	{
+        const BrakeConfig& bc = context.Config->Brakes;
+        if (!bc.TractionControlEnabled) return;
+
+        VehicleRuntime& rt = *context.Runtime;
+        if (rt.Throttle < 0.05f) return;
+
+        for (WheelRuntime& wr : rt.Wheels)
+        {
+            if (!wr.Grounded || std::fabs(wr.DriveTorque) <= 0.0f) continue;
+
+            // Positive slip ratio under power: the wheel is spinning up.
+            const float slipInDriveDirection =
+                wr.DriveTorque >= 0.0f ? wr.SlipRatio : -wr.SlipRatio;
+
+            if (slipInDriveDirection > bc.TcSlipThreshold)
+            {
+                const float excess = slipInDriveDirection - bc.TcSlipThreshold;
+                const float cut = Clamp(1.0f - excess * 3.0f, 0.1f, 1.0f);
+                wr.DriveTorque *= cut;
+            }
+        }
 	}
 
 	void VehiclePhysicsModule::ApplyWheelForces(VehicleContext& context)
@@ -123,7 +144,7 @@ namespace Vehicle
         {
             if (!wr.Grounded) continue;
 
-            // Suspension force acts at the anchor, along the suspension axis.
+            // Suspension force acts at the anchor, along the suspension axis
             if (wr.SuspensionForce.length2() > MathUtils::EPSILON && IsFinite(wr.SuspensionForce))
                 context.Body->applyForce(wr.SuspensionForce, wr.AnchorWorld - com);
 

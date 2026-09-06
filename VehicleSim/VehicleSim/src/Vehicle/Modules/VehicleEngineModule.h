@@ -15,5 +15,16 @@ namespace Vehicle
         void Dispose() override;
 
         const char* GetName() const override { return "VehicleEngineModule"; }
+
+    private:
+        void UpdateRPM(float dt, VehicleContext& context);
+        void CalculateTorque(VehicleContext& context);
+
+        /// <summary>
+        /// Normalized torque curve
+        /// </summary>
+        static float TorqueCurve(const EngineConfig& engine, float rpm);
+
+        bool _revLimiterActive = false;
     };
 }

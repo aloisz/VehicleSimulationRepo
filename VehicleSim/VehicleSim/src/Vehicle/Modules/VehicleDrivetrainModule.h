@@ -21,7 +21,11 @@ namespace Vehicle
         const char* GetName() const override { return "VehicleDrivetrainModule"; }
 
     private:
+        void UpdateWheelFeedback(VehicleContext& context);
         void UpdateGearbox(float dt, VehicleContext& context);
+        bool ShiftingInProgress(float dt, VehicleRuntime& runtime, const GearboxConfig& gearbox);
+        bool ManualShifting(float dt, VehicleContext& context, VehicleRuntime& runtime);
+
         void UpdateClutch(float dt, VehicleContext& context);
         void DistributeTorque(VehicleContext& context);
 
@@ -37,6 +41,7 @@ namespace Vehicle
         std::vector<size_t> _drivenRear;
 
         int _maxAxle = 0;
+        int _maxGear = 0;
 
         /// <summary>
         /// in m/s

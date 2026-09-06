@@ -152,6 +152,8 @@ namespace
         ReadFloat(j, "shiftTime", g.ShiftTime);
         ReadFloat(j, "upshiftRPM", g.UpshiftRPM);
         ReadFloat(j, "downshiftRPM", g.DownshiftRPM);
+        ReadFloat(j, "autoReverseThrottleThreshold", g.AutoReverseThrottleThreshold);
+        ReadFloat(j, "autoReverseBrakeThreshold", g.AutoReverseBrakeThreshold);
         ReadFloat(j, "clutchEngageRPM", g.ClutchEngageRPM);
     }
 
@@ -357,6 +359,8 @@ namespace Vehicle
             { "shiftTime", cfg.Gearbox.ShiftTime },
             { "upshiftRPM", cfg.Gearbox.UpshiftRPM },
             { "downshiftRPM", cfg.Gearbox.DownshiftRPM },
+            { "autoReverseThrottleThreshold", cfg.Gearbox.AutoReverseThrottleThreshold },
+            { "autoReverseBrakeThreshold", cfg.Gearbox.AutoReverseBrakeThreshold },
             { "clutchEngageRPM", cfg.Gearbox.ClutchEngageRPM }
         };
 
